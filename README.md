@@ -12,3 +12,5 @@ Java EE sélectionné -> next
 module name : IDEA , content root : .../ProjetTutS3B2/IDEA  (le même pour module file location)
 
 Et normalement ça devrait fonctionner 
+
+la flemme maxime
