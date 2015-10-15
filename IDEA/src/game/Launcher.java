@@ -2,10 +2,13 @@ package game;
 
 
 public class Launcher {
-    public static void main(String args[]){
-        System.out.println("Un bon debut !");
+    public static void main(String[] args) {
 
-
-        System.out.println("test check !");
-
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                Model model = new Model();
+                ControlGroup control = new ControlGroup(model);
+            }
+        });
+    }
 }
