@@ -10,12 +10,10 @@ import java.awt.event.MouseEvent;
  */
 public class MovePanel extends JPanel {
     protected Model model;
-    protected Vue vue;
     public RenderPanel renderPanel;
 
-    public MovePanel(Model m, Vue v) {
+    public MovePanel(Model m) {
         model = m;
-        vue = v;
 
         setLayout(null); // on supprime le layout manager
 
@@ -27,16 +25,15 @@ public class MovePanel extends JPanel {
     }
 
     private JComponent createComponent() {
-        renderPanel = new RenderPanel(model, vue); // création du jpanel contenant la map déplaçable
+        renderPanel = new RenderPanel(model); // création du jpanel contenant la map déplaçable
         renderPanel.setLocation(0,0); // position de départ
-        renderPanel.setSize(5000, 5000); // taille du fichier image de la map (?)
-        renderPanel.setEnabled(false); // les composants ne doivent pas intercepter la souris (ça va merder...)
+        renderPanel.setSize(5000, 5000); // taille du fichier image de la map
+        //renderPanel.setEnabled(false); // les composants ne doivent pas intercepter la souris (ça va merder...)
         return renderPanel;
     }
 
     private static class ComponentMove extends MouseAdapter {
 
-        private boolean move;
         private int relx;
         private JComponent component;
         private int rely;
@@ -52,7 +49,6 @@ public class MovePanel extends JPanel {
             if (component != null) {
                 relx = e.getX() - component.getX(); // on mémorise la position relative
                 rely = e.getY() - component.getY();
-                move = true; // démarrage du mouvement
                 component.setBorder(BorderFactory.createLineBorder(Color.RED)); // sélectionné -> bordure
             }
         }
@@ -62,7 +58,6 @@ public class MovePanel extends JPanel {
             if (component != null) {
                 component.setBorder(null);
                 component = null;
-                move = false;
             }
         }
 
@@ -78,8 +73,9 @@ public class MovePanel extends JPanel {
 
         @Override
         public void mouseDragged(MouseEvent e) {
+            if (component != null) {
                 component.setLocation(e.getX() - relx, e.getY() - rely);
+            }
         }
-
     }
 }

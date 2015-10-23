@@ -11,14 +11,13 @@ public class Vue extends JFrame{
     public Dimension dimension;
     protected Model model;
 
-    public MovePanel movePanel; // fond contenant la carte et tous les elements
 
     public Vue(Model m){
         model = m;
         dimension = Toolkit.getDefaultToolkit().getScreenSize();
 
         initAttribut();
-        setSize(1005, 850);
+        setSize(dimension.width - 100, dimension.height - 70);
 
         creerVueJeu();
 
@@ -32,12 +31,17 @@ public class Vue extends JFrame{
     }
 
     private void creerVueJeu() {
-        movePanel.repaint();
-        setContentPane(movePanel);
+        JPanel tout = new JPanel(new BorderLayout());
+        JPanel bar = new JPanel();
+        model.movePanel.repaint();
+        bar.add(new JButton("coucou"));
+        tout.add(model.movePanel, BorderLayout.CENTER);
+        tout.add(bar, BorderLayout.PAGE_END);
+        setContentPane(tout);
     }
 
     private void initAttribut() {
-        movePanel = new MovePanel(model, this);
+        model.movePanel = new MovePanel(model);
     }
 
     public void setControlButton(ActionListener listener) {
