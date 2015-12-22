@@ -11,6 +11,7 @@ public class Model {
 
     public ArrayList<Unite> units;
     public ArrayList<Unite> ennemis;
+    public Cursor c;
 
     Toolkit tk = Toolkit.getDefaultToolkit();
     ///// IMAGES /////
@@ -19,11 +20,12 @@ public class Model {
     public Model(){
         units = new ArrayList<Unite>();
         ennemis = new ArrayList<Unite>();
+        c=new Cursor();
 
         units.add(new Unite(5,5)); //test affichage
 
         ///// IMAGES /////
-        map = tk.getImage("Images/map.png");
+        map = tk.getImage("Images/map.jpg");
     }
 
     public Image getMap(){ return map; }

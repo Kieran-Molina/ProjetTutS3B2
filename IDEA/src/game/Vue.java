@@ -10,10 +10,12 @@ import java.awt.event.ActionListener;
 public class Vue extends JFrame{
     public Dimension dimension;
     protected Model model;
+    protected Vue vue;
 
 
-    public Vue(Model m){
+    public Vue(Model m,Vue v){
         model = m;
+        vue = v;
         dimension = Toolkit.getDefaultToolkit().getScreenSize();
 
         initAttribut();
@@ -41,7 +43,7 @@ public class Vue extends JFrame{
     }
 
     private void initAttribut() {
-        model.movePanel = new MovePanel(model);
+        model.movePanel = new MovePanel(model,vue);
     }
 
     public void setControlButton(ActionListener listener) {
