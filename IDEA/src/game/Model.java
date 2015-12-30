@@ -1,6 +1,8 @@
 package game;
 
+import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -13,7 +15,6 @@ public class Model {
     public ArrayList<Unite> ennemis;
     public Cursor c;
 
-    Toolkit tk = Toolkit.getDefaultToolkit();
     ///// IMAGES /////
     protected Image map;
 
@@ -25,7 +26,7 @@ public class Model {
         units.add(new Unite(5,5)); //test affichage
 
         ///// IMAGES /////
-        map = tk.getImage("Images/map.jpg");
+        map = new ImageIcon("IDEA/Images/Tactical/Map/map.png").getImage();
     }
 
     public Image getMap(){ return map; }

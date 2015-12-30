@@ -21,15 +21,16 @@ public class RenderPanel extends JPanel {
 
         super.paintComponent(g);
         //fond map
-        g.setColor(Color.green);
-        //g.drawImage(model.getMap(),0,0,this);
+        g.drawImage(model.getMap(),0,0,this);
+
+        //Unités
         for (Unite uni : model.units){
-           // g.drawImage(uni.getImage().getImage(),uni.getX()*100,uni.getY()*100,this);
+            g.drawImage(uni.getImageIcon().getImage(),uni.getX()*100,uni.getY()*100,this);
             g.setColor(Color.RED);
             g.drawRect (10, 10,model.c.getCurseX()*10 ,model.c.getCurseY()*10);
 
-            g.setColor(Color.green);
-            //g.draw3DRect (10, 10,uni.getX()*10,uni.getY()*10,true);
+            /*g.setColor(Color.green);
+            g.draw3DRect (10, 10,uni.getX()*100,uni.getY()*100,true);*/
         }
     }
 }

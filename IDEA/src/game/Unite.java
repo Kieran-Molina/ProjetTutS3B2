@@ -12,10 +12,10 @@ public class Unite { // sera en abstract
 
 
     //--- CONSTANTES ---//
-    private static final ImageIcon img_UP = new ImageIcon("Images/Unite/Default/up.png");
-    private static final ImageIcon img_RIGHT = new ImageIcon("Images/Unite/Default/right.png");
-    private static final ImageIcon img_DOWN = new ImageIcon("Images/Unite/Default/down.png");
-    private static final ImageIcon img_LEFT = new ImageIcon("Images/Unite/Default/left.png");
+    private static final ImageIcon img_UP = new ImageIcon("IDEA/Images/Tactical/Unite/Default/up.png");
+    private static final ImageIcon img_RIGHT = new ImageIcon("IDEA/Images/Tactical/Unite/Default/right.png");
+    private static final ImageIcon img_DOWN = new ImageIcon("IDEA/Images/Tactical/Unite/Default/down.png");
+    private static final ImageIcon img_LEFT = new ImageIcon("IDEA/Images/Tactical/Unite/Default/left.png");
     public static final int UP = 1, RIGHT = 2, DOWN = 3, LEFT = 4;
     public static final int DEPLACEMENT_MAX = 5;
 
@@ -41,7 +41,7 @@ public class Unite { // sera en abstract
         }
     }
 
-    public ImageIcon getImage(){
+    public ImageIcon getImageIcon(){
         switch (direction){
             case UP:
                 return img_UP;

@@ -29,7 +29,7 @@ public class MovePanel extends JPanel {
     private JComponent createComponent() {
         renderPanel = new RenderPanel(model,vue); // création du jpanel contenant la map déplaçable
         renderPanel.setLocation(0,0); // position de départ
-        renderPanel.setSize(900, 600); // taille du fichier image de la map
+        renderPanel.setSize(model.getMap().getWidth(null), model.getMap().getHeight(null)); // taille de la map
         //renderPanel.setEnabled(false); // les composants ne doivent pas intercepter la souris (ça va merder...)
         return renderPanel;
     }
