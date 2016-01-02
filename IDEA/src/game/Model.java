@@ -26,7 +26,7 @@ public class Model {
         units.add(new Unite(5,5)); //test affichage
 
         ///// IMAGES /////
-        map = new ImageIcon("IDEA/Images/Tactical/Map/map.png").getImage();
+        map = new ImageIcon("IDEA/Images/Tactical/Map/PetitTest.png").getImage();
     }
 
     public Image getMap(){ return map; }
