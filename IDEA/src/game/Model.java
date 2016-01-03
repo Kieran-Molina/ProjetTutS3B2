@@ -24,7 +24,7 @@ public class Model {
         ennemis = new ArrayList<Unite>();
         c=new Cursor();
 
-        units.add(new Unite(5,5)); //test affichage
+        units.add(new Unite(5,5,5,true)); //test affichage
 
         ///// IMAGES /////
         map = new ImageIcon("IDEA/Images/Tactical/Map/PetitTest.png").getImage();

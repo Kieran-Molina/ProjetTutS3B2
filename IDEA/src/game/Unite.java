@@ -6,8 +6,9 @@ import java.awt.*;
 /**
  * Created by Kiéran on 23/10/2015.
  */
-public class Unite { // sera en abstract
-    public int x, y, direction;
+public class Unite {
+    private static int direction; // sera en abstract
+    public int x, y;
     public int etat;
     public boolean isSelect;
     public int DEPLACEMENT_MAX = 5;
@@ -26,7 +27,7 @@ public class Unite { // sera en abstract
         x = posX; y = posY;
         DEPLACEMENT_MAX=dep;
         isSelect=false;
-        side=ami;
+
     }
 
     public void deplaceUnite(int depX, int depY){
@@ -47,7 +48,7 @@ public class Unite { // sera en abstract
         }
     }
 
-    public ImageIcon getImageIcon(){
+    public static ImageIcon getImageIcon(){
         switch (direction){
             case UP:
                 return img_UP;
