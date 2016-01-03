@@ -10,8 +10,8 @@ import java.awt.event.*;
 public class RenderPanel extends JPanel implements ActionListener {
     protected Vue vue;
     protected Model model;
-    private Timer timer;
-    private final int DELAY = 10;
+   private Timer timer;
+   // private final int DELAY = 10;
 
     public RenderPanel(Model m,Vue v) {
         super();
@@ -20,7 +20,7 @@ public class RenderPanel extends JPanel implements ActionListener {
         setLayout(new GridLayout(50,50,0,0)); //PB
         addKeyListener((KeyListener) new TAdapter());
         setFocusable(true);
-        timer = new Timer(DELAY, this);
+        timer = new Timer(model.DELAY, this);
         timer.start();
     }
 
@@ -34,10 +34,7 @@ public class RenderPanel extends JPanel implements ActionListener {
         for (Unite uni : model.units){
             g.drawImage(uni.getImageIcon().getImage(),uni.getX()*100,uni.getY()*100,this);
             g.setColor(Color.RED);
-           // g.drawRect (10, 10,model.c.getCurseX()*10 ,model.c.getCurseY()*10);
-            g.drawImage(model.c.getImage(), model.c.getCurseX(), model.c.getCurseY(), this);
-            /*g.setColor(Color.green);
-            g.draw3DRect (10, 10,uni.getX()*100,uni.getY()*100,true);*/
+            g.drawImage(model.c.getImage(), model.c.getCurseX(), model.c.getCurseY(), this);//curseur
         }
     }
 

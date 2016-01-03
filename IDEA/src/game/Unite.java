@@ -9,6 +9,9 @@ import java.awt.*;
 public class Unite { // sera en abstract
     public int x, y, direction;
     public int etat;
+    public boolean isSelect;
+    public int DEPLACEMENT_MAX = 5;
+    public boolean side;
 
 
     //--- CONSTANTES ---//
@@ -17,20 +20,23 @@ public class Unite { // sera en abstract
     private static final ImageIcon img_DOWN = new ImageIcon("IDEA/Images/Tactical/Unite/Default/down.png");
     private static final ImageIcon img_LEFT = new ImageIcon("IDEA/Images/Tactical/Unite/Default/left.png");
     public static final int UP = 1, RIGHT = 2, DOWN = 3, LEFT = 4;
-    public static final int DEPLACEMENT_MAX = 5;
 
-    public Unite(int posX, int posY){
+    public Unite(int posX, int posY, int dep,boolean ami){
         direction = RIGHT;
         x = posX; y = posY;
+        DEPLACEMENT_MAX=dep;
+        isSelect=false;
+        side=ami;
     }
 
     public void deplaceUnite(int depX, int depY){
+        if(isSelect==true){
         if (depX + depX > DEPLACEMENT_MAX){
             System.out.println("deplacement trop grand : "+(depX+depY)+" max : "+DEPLACEMENT_MAX);
             return;
         }
         x+=depX;
-        y+=depY;
+        y+=depY;}
     }
 
     public int getEtat(){return etat;}
@@ -56,4 +62,8 @@ public class Unite { // sera en abstract
 
     public int getX(){return x;}
     public int getY(){return y;}
+
+    public boolean getSelect(){return isSelect;}
+    public void trueSelect(){isSelect=true;}
+    public void falseSelect(){isSelect=false;}
 }

@@ -69,22 +69,18 @@ public class Cursor {
 
         if (key == KeyEvent.VK_Q) {
             dx = -1;
-            System.out.println("llll");
         }
 
         if (key == KeyEvent.VK_D) {
             dx = 1;
-            System.out.println("llll");
         }
 
         if (key == KeyEvent.VK_Z) {
             dy = -1;
-            System.out.println("llll");
         }
 
         if (key == KeyEvent.VK_S) {
             dy = 1;
-            System.out.println("llll");
         }
     }
 

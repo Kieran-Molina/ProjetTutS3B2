@@ -14,6 +14,7 @@ public class Model {
     public ArrayList<Unite> units;
     public ArrayList<Unite> ennemis;
     public Cursor c;
+    protected int DELAY = 10;
 
     ///// IMAGES /////
     protected Image map;
@@ -30,4 +31,8 @@ public class Model {
     }
 
     public Image getMap(){ return map; }
+
+    public int getDELAY(){return DELAY;}
+    public void setDELAYUp(){DELAY=DELAY+1;}
+    public void setDELAYDown(){DELAY=DELAY-1;}
 }
