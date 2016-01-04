@@ -53,6 +53,7 @@ public class RenderPanel extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         model.c.move();
+        model.tutur.move();
         repaint();
     }
 
@@ -61,11 +62,13 @@ public class RenderPanel extends JPanel implements ActionListener {
         @Override
         public void keyReleased(KeyEvent e) {
             model.c.keyReleased(e);
+            model.tutur.keyReleased(e);
         }
 
         @Override
         public void keyPressed(KeyEvent e) {
             model.c.keyPressed(e);
+            model.tutur.keyPressed(e);
         }
     }
 }
