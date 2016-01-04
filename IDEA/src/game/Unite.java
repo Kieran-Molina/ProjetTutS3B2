@@ -13,6 +13,7 @@ public class Unite {
     public boolean isSelect;
     public int DEPLACEMENT_MAX = 5;
     public boolean side;
+    public Image image;
 
 
     //--- CONSTANTES ---//
@@ -27,6 +28,8 @@ public class Unite {
         x = posX; y = posY;
         DEPLACEMENT_MAX=dep;
         isSelect=false;
+        ImageIcon ii = new ImageIcon("IDEA/Images/Tactical/Batiment/Batiment.png");//test image
+        image = ii.getImage();//pareil
 
     }
 
@@ -60,6 +63,9 @@ public class Unite {
                 return img_RIGHT;
         }
     }
+    public Image getImage() {
+        return image;
+    }//test d'image
 
     public int getX(){return x;}
     public int getY(){return y;}

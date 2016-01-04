@@ -11,7 +11,7 @@ public class Batiment {
     protected int x;
     protected int y;
 
-    private Image image;
+    protected Image image;
 
     public Batiment (){
         initBat();
@@ -21,7 +21,13 @@ public class Batiment {
 
         ImageIcon ii = new ImageIcon("IDEA/Images/Tactical/Batiment/Batiment.png");
         image = ii.getImage();
-        x=0;
-        y=0;
+
     }
+
+    public Image getImage() {
+        return image;
+    }
+
+    public int getX(){return x;}
+    public int getY(){return y;}
 }

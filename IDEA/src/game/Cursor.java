@@ -82,6 +82,7 @@ public class Cursor {
         if (key == KeyEvent.VK_S) {
             dy = 1;
         }
+
     }
 
     public void keyReleased(KeyEvent e) {

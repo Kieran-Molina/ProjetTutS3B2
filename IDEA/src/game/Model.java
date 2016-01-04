@@ -2,6 +2,7 @@ package game;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.util.ArrayList;
 
@@ -13,8 +14,13 @@ public class Model {
 
     public ArrayList<Unite> units;
     public ArrayList<Unite> ennemis;
+    public ArrayList<Batiment> ville;
+    public Armee armee;
+    public QG qg;
+    public BFormation ecole;
     public Cursor c;
-    protected int DELAY = 10;
+    public R17 tutur;
+    protected int DELAY = 4;
 
     ///// IMAGES /////
     protected Image map;
@@ -22,10 +28,19 @@ public class Model {
     public Model(){
         units = new ArrayList<Unite>();
         ennemis = new ArrayList<Unite>();
+        armee = new Armee();
+        qg = new QG(300,200);
+        ecole= new BFormation(1000,200);
         c=new Cursor();
-
-        units.add(new Unite(5,5,5,true)); //test affichage
-
+        tutur = new R17(300,100,5,true);
+        ville = new ArrayList<Batiment>();
+        armee.addUnite(new R17(5,5,5,true));
+        armee.addUnite(new R17(100,5,5,true));
+        armee.addUnite(new R17(200,5,5,true));
+        units.add(new R17(5,5,5,true)); //test ami affichage
+        ennemis.add(new R17(100,100,5,false));//test ennemis
+        ville.add(new QG(600,0));
+        ville.add(new BFormation(2000,0));
         ///// IMAGES /////
         map = new ImageIcon("IDEA/Images/Tactical/Map/PetitTest.png").getImage();
     }
@@ -33,6 +48,9 @@ public class Model {
     public Image getMap(){ return map; }
 
     public int getDELAY(){return DELAY;}
-    public void setDELAYUp(){DELAY=DELAY+1;}
-    public void setDELAYDown(){DELAY=DELAY-1;}
+    public void setDELAYUp(){DELAY=DELAY-1;}
+    public void setDELAYDown(){DELAY=DELAY+1;}
+
+
+
 }

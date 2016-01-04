@@ -14,9 +14,12 @@ public class R17 extends Unite {
     public static final int UP = 1, RIGHT = 2, DOWN = 3, LEFT = 4;
 
 
+
     public R17(int posX, int posY, int dep, boolean ami) {
 
         super(posX, posY, dep, ami);
+        ImageIcon ii = new ImageIcon("IDEA/Images/Tactical/Unite/Proto/tank.png");
+        image = ii.getImage();
     }
 
 

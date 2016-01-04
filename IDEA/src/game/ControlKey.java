@@ -16,6 +16,11 @@ public class ControlKey implements KeyListener{
     }
 
     public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
         int i = e.getKeyCode();
 
         if(i==KeyEvent.VK_Z){
@@ -34,13 +39,19 @@ public class ControlKey implements KeyListener{
             model.c.setCurseX(+1);
             System.out.println(model.c.getCurseX());
         }
+
+
+        if (i== KeyEvent.VK_SPACE) {
+            model.setDELAYUp();
+        }
     }
 
-    public void keyPressed(KeyEvent e) {
-
-    }
 
     public void keyReleased(KeyEvent e) {
+        int i = e.getKeyCode();
 
+        if (i== KeyEvent.VK_SPACE) {
+            model.setDELAYDown();
+        }
     }
 }
