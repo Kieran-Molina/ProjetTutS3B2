@@ -8,11 +8,10 @@ import javax.swing.*;
 public class BFormation extends Batiment {
 
     public BFormation(int lx,int ly) {
-        super();
+        super(lx,ly);
         ImageIcon ii = new ImageIcon("IDEA/Images/Tactical/Batiment/BatimentFormation.png");
         image = ii.getImage();
-        x=lx;
-        y=ly;
+
     }
 }
 

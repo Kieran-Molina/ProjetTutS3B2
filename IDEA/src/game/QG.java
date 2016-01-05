@@ -8,12 +8,9 @@ import javax.swing.*;
 public class QG extends Batiment {
 
     public QG (int lx,int ly){
-        super();
+        super(lx,ly);
         ImageIcon ii = new ImageIcon("IDEA/Images/Tactical/Batiment/QG.png");
         image = ii.getImage();
-        x=lx;
-        y=ly;
-
 
     }
 

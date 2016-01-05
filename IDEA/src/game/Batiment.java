@@ -8,19 +8,16 @@ import java.awt.*;
  */
 public class Batiment {
 
-    protected int x;
-    protected int y;
+    protected int x, y;
 
     protected Image image;
 
-    public Batiment (){
-        initBat();
-    }
+    public Batiment (int xb,int yb){
 
-    private void initBat() {
-
-        ImageIcon ii = new ImageIcon("IDEA/Images/Tactical/Batiment/Batiment.png");
-        image = ii.getImage();
+        x=xb;
+        y=yb;
+       // ImageIcon ii = new ImageIcon("IDEA/Images/Tactical/Batiment/Batiment.png");
+        //image = ii.getImage();
 
     }
 

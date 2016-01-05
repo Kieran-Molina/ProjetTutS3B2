@@ -28,8 +28,8 @@ public class Unite {
         x = posX; y = posY;
         DEPLACEMENT_MAX=dep;
         isSelect=false;
-        ImageIcon ii = new ImageIcon("IDEA/Images/Tactical/Batiment/Batiment.png");//test image
-        image = ii.getImage();//pareil
+    //    ImageIcon ii = new ImageIcon("IDEA/Images/Tactical/Batiment/Batiment.png");//test image
+      //  image = ii.getImage();//pareil
 
     }
 
