@@ -52,6 +52,14 @@ public class Cursor {
     public void move() {
         x += dx;
         y += dy;
+
+        if (x < 1) {
+            x = 1;
+        }
+
+        if (y < 1) {
+            y = 1;
+        }
     }
 
     public void setCurseSelect(){

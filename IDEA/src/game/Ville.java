@@ -1,6 +1,7 @@
 package game;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 /**
@@ -9,6 +10,9 @@ import java.util.ArrayList;
 public class Ville {
     ArrayList<Batiment> ville;
     Image image;
+    int lower = 100;
+    int higher =3000;
+    int random = (int)(Math.random() * (higher-lower)) + lower;
 
     Ville() {
         ville = new ArrayList<Batiment>();
@@ -21,6 +25,10 @@ public class Ville {
         ville.clear();
     }
 
+    public ArrayList getVille() {
+        return ville;
+    }
+
     public Batiment getBat(int index) {return ville.get(index);}
 
     public void addBat(Batiment u) {ville.add(u);}
@@ -30,5 +38,22 @@ public class Ville {
     public void removeBat(int index) {ville.remove(index);}
 
     public int taille() {return ville.size();}
+
+    public void keyPressed(KeyEvent e) {
+
+        int key = e.getKeyCode();
+
+        if (key == KeyEvent.VK_SPACE) {
+            addBat(new QG(random,random));}
+
+    }
+
+    public void keyReleased(KeyEvent e) {
+
+        int key = e.getKeyCode();
+
+       // if (key == KeyEvent.VK_SPACE) {dx = 0;}
+
+    }
 
 }

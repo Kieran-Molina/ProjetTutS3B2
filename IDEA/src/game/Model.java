@@ -38,7 +38,7 @@ public class Model {
         tutur = new R17(300,100,5,true);
 
         ///// IMAGES /////
-        map = new ImageIcon("IDEA/Images/Tactical/Map/PetitTest.png").getImage();
+        map = new ImageIcon("IDEA/Images/Tactical/Map/MapVierge.png").getImage();
         armee.addUnite(new R17(5,5,5,true));
         armee.addUnite(new R17(100,5,5,true));
         armee.addUnite(new R17(200,5,5,true));

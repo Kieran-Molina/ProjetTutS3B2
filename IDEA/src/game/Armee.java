@@ -22,6 +22,10 @@ public class Armee {
         armee.clear();
     }
 
+    public ArrayList getArmee() {
+        return armee;
+    }
+
     public Unite getUnite(int index) {
         return armee.get(index);
     }
