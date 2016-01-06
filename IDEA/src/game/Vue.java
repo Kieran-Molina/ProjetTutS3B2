@@ -10,10 +10,12 @@ import java.awt.event.ActionListener;
 public class Vue extends JFrame{
     public Dimension dimension;
     protected Model model;
+    protected Vue vue;
 
 
-    public Vue(Model m){
+    public Vue(Model m,Vue v){
         model = m;
+        vue = v;
         dimension = Toolkit.getDefaultToolkit().getScreenSize();
 
         initAttribut();
@@ -24,7 +26,7 @@ public class Vue extends JFrame{
         setLocation((dimension.width / 2) - (getWidth() / 2), (dimension.height / 2) - (getHeight() / 2));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(true);
-        setTitle("Faudra trouver un nom ... "); //--------------------- TITRE ?
+        setTitle("Projet Tut "); //--------------------- TITRE ?
 
         setVisible(true);
 
@@ -34,14 +36,16 @@ public class Vue extends JFrame{
         JPanel tout = new JPanel(new BorderLayout());
         JPanel bar = new JPanel();
         model.movePanel.repaint();
-        bar.add(new JButton("coucou"));
+        bar.add(new JButton("fonction 1"));
+        bar.add(new JButton("fonction 2"));
+        bar.add(new JButton("fonction 3"));
         tout.add(model.movePanel, BorderLayout.CENTER);
         tout.add(bar, BorderLayout.PAGE_END);
         setContentPane(tout);
     }
 
     private void initAttribut() {
-        model.movePanel = new MovePanel(model);
+        model.movePanel = new MovePanel(model,vue);
     }
 
     public void setControlButton(ActionListener listener) {
