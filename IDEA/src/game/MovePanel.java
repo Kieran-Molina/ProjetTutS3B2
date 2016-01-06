@@ -2,13 +2,12 @@ package game;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 
 /**
  * Created by Kiéran on 15/10/2015.
  */
-public class MovePanel extends JPanel {
+public class MovePanel extends JPanel{
     protected Model model;
     protected Vue vue;
     public RenderPanel renderPanel;
@@ -20,17 +19,16 @@ public class MovePanel extends JPanel {
         setLayout(null); // on supprime le layout manager
 
         ComponentMove listener = new ComponentMove(this);
-        add(createComponent());
+        add(createRenderPan());
         addMouseListener(listener);
         addMouseMotionListener(listener);
 
     }
 
-    private JComponent createComponent() {
+    private JComponent createRenderPan() {
         renderPanel = new RenderPanel(model,vue); // création du jpanel contenant la map déplaçable
         renderPanel.setLocation(0,0); // position de départ
         renderPanel.setSize(model.getMap().getWidth(null), model.getMap().getHeight(null)); // taille de la map
-        //renderPanel.setEnabled(false); // les composants ne doivent pas intercepter la souris (ça va merder...)
         return renderPanel;
     }
 
