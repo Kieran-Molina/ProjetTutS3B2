@@ -18,8 +18,10 @@ public class Grenadier extends Unite {
     public Grenadier(int posX, int posY, int dep, boolean ami) {
 
         super(posX, posY, dep, ami);
-        ImageIcon ii = new ImageIcon("IDEA/Images/Tactical/Unite/Grenadier/Normal/Déplacement_LEFT/Grenadier_Deplacement_1.png");
-        image = ii.getImage();
+
+        loadImage("IDEA/Images/Tactical/Unite/Grenadier/Normal/Déplacement_LEFT/Grenadier_Deplacement_1.png");
+        getImageDimensions();
+
     }
 
 

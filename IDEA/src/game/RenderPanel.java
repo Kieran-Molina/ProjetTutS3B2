@@ -55,7 +55,7 @@ public class RenderPanel extends JPanel implements ActionListener {
 
         //Unités
         for (Unite uni : model.units) {
-             g.drawImage(uni.getImageIcon().getImage(),uni.getX()*100,uni.getY()*100,this);
+            // g.drawImage(uni.getImageIcon().getImage(),uni.getX()*100,uni.getY()*100,this);
             //vehicule
             //  g.drawImage(R17.getImageIcon().getImage(),uni.getX()*100,uni.getY()*100,this);
             g.drawImage(model.tutur.getImage(), model.tutur.getX(), model.tutur.getY(), this);

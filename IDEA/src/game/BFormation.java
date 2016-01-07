@@ -9,8 +9,9 @@ public class BFormation extends Batiment {
 
     public BFormation(int lx,int ly) {
         super(lx,ly);
-        ImageIcon ii = new ImageIcon("IDEA/Images/Tactical/Batiment/BatimentFormation.png");
-        image = ii.getImage();
+
+        loadImage("IDEA/Images/Tactical/Batiment/BatimentFormation.png");
+        getImageDimensions();
 
     }
 }
