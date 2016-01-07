@@ -18,5 +18,6 @@ public class ControlGroup {
         cb = new ControlButton(model, vue);
         cm = new ControlMenu(model, vue);
         ck = new ControlKey(model, vue);
+        vue.setControlKey(ck);
     }
 }

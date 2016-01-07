@@ -18,6 +18,8 @@ public class Model {
     public Armee armee;
     public Ville city;
     public QG qg;
+    public British b;
+    public Infanterie inf;
     public BFormation ecole;
     public Cursor c;
     public R17 tutur;
@@ -36,15 +38,16 @@ public class Model {
         ecole= new BFormation(1000,200);
         c=new Cursor();
         tutur = new R17(300,100,5,true);
+        b = new British(500,200,5,true);
+        inf = new Infanterie(500,200,5,true);
 
         ///// IMAGES /////
         map = new ImageIcon("IDEA/Images/Tactical/Map/MapVierge.png").getImage();
         armee.addUnite(new R17(5,5,5,true));
         armee.addUnite(new R17(100,5,5,true));
         armee.addUnite(new R17(200,5,5,true));
-        city.addBat(new QG(800,100));
-        city.addBat(new QG(1000,100));
-        city.addBat(new QG(2000,100));
+        city.addBat();
+        city.addBat();
         units.add(new R17(5,5,5,true)); //test ami affichage
         ennemis.add(new R17(100,100,5,false));//test ennemis
         ville.add(new QG(600,0));

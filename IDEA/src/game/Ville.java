@@ -31,7 +31,7 @@ public class Ville {
 
     public Batiment getBat(int index) {return ville.get(index);}
 
-    public void addBat(Batiment u) {ville.add(u);}
+    public void addBat() {ville.add(new QG(random,random));}
 
     public void removeBat(Batiment u) {ville.remove(u);}
 
@@ -39,21 +39,6 @@ public class Ville {
 
     public int taille() {return ville.size();}
 
-    public void keyPressed(KeyEvent e) {
 
-        int key = e.getKeyCode();
-
-        if (key == KeyEvent.VK_SPACE) {
-            addBat(new QG(random,random));}
-
-    }
-
-    public void keyReleased(KeyEvent e) {
-
-        int key = e.getKeyCode();
-
-       // if (key == KeyEvent.VK_SPACE) {dx = 0;}
-
-    }
 
 }

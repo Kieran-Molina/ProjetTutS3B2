@@ -18,10 +18,25 @@ public class RenderPanel extends JPanel implements ActionListener {
         model = m;
         vue = v;
         setLayout(new GridLayout(50,50,0,0)); //PB
-        addKeyListener((KeyListener) new TAdapter());
+        addKeyListener( new TAdapter());
         setFocusable(true);
         timer = new Timer(model.DELAY, this);
         timer.start();
+    }
+
+    public void deplacer(int x, int y){
+        setLocation(getX()+x , getY()+y);
+        if (getX() > 0) setLocation(0,getY());
+        if (getY() > 0) setLocation(getX(),0);
+
+        int hmax = getParent().getWidth() - model.getMap().getWidth(null);
+        int lmax = getParent().getHeight() - model.getMap().getHeight(null);
+
+        if (getX() < hmax) setLocation(hmax,getY());
+        if (getY() < lmax) setLocation(getX(),lmax);
+
+
+        revalidate();
     }
 
     protected void paintComponent(Graphics g){
@@ -45,6 +60,8 @@ public class RenderPanel extends JPanel implements ActionListener {
             //  g.drawImage(R17.getImageIcon().getImage(),uni.getX()*100,uni.getY()*100,this);
             g.drawImage(model.tutur.getImage(), model.tutur.getX(), model.tutur.getY(), this);
             g.drawImage(model.armee.getImage(), model.tutur.getX(), model.tutur.getY(), this);
+            g.drawImage(model.b.getImage(), model.b.getX(), model.b.getY(), this);
+            g.drawImage(model.inf.getImage(), model.inf.getX(), model.inf.getY(), this);
         }
 
             //curseur
@@ -57,6 +74,10 @@ public class RenderPanel extends JPanel implements ActionListener {
 
         model.c.move();
         model.tutur.move();
+        model.inf.move();
+        model.b.move();
+        model.city.addBat();//
+        model.city.getVille();//it doesn't work
         repaint();
     }
 
@@ -66,12 +87,16 @@ public class RenderPanel extends JPanel implements ActionListener {
         public void keyReleased(KeyEvent e) {
             model.c.keyReleased(e);
             model.tutur.keyReleased(e);
+            model.b.keyReleased(e);
+            model.inf.keyReleased(e);
         }
 
         @Override
         public void keyPressed(KeyEvent e) {
             model.c.keyPressed(e);
             model.tutur.keyPressed(e);
+            model.b.keyPressed(e);
+            model.inf.keyReleased(e);
         }
     }
 }

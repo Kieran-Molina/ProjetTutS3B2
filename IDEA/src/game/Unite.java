@@ -2,6 +2,7 @@ package game;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 
 /**
  * Created by Kiéran on 23/10/2015.
@@ -14,6 +15,8 @@ public class Unite {
     public int DEPLACEMENT_MAX = 5;
     public boolean side;
     public Image image;
+    private int dx;
+    private int dy;
 
 
     //--- CONSTANTES ---//
@@ -73,4 +76,37 @@ public class Unite {
     public boolean getSelect(){return isSelect;}
     public void trueSelect(){isSelect=true;}
     public void falseSelect(){isSelect=false;}
+
+    public void move() {
+        x += dx;
+        y += dy;
+    }
+    public void keyPressed(KeyEvent e) {
+
+        int key = e.getKeyCode();
+
+        if (key == KeyEvent.VK_LEFT) {dx = -1;}
+
+        if (key == KeyEvent.VK_RIGHT) {dx = 1;}
+
+        if (key == KeyEvent.VK_UP) {dy = -1;}
+
+        if (key == KeyEvent.VK_DOWN) {dy = 1;}
+
+    }
+
+    public void keyReleased(KeyEvent e) {
+
+        int key = e.getKeyCode();
+
+        if (key == KeyEvent.VK_LEFT) {dx = 0;}
+
+        if (key == KeyEvent.VK_RIGHT) {dx = 0;}
+
+        if (key == KeyEvent.VK_UP) {dy = 0;}
+
+        if (key == KeyEvent.VK_DOWN) {dy = 0;}
+    }
+
+
 }
