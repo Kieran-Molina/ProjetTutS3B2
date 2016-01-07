@@ -7,7 +7,7 @@ import java.awt.event.KeyEvent;
 /**
  * Created by nico on 22/12/15.
  */
-public class Cursor {
+public class Cursor extends Sprite {
 
     private int dx;
     private int dy;
@@ -18,7 +18,8 @@ public class Cursor {
     protected int longX;
     private Image image;
 
-    public Cursor (){
+    public Cursor (int posx,int posy){
+        super(posx,posy);
         initCursor();
     }
 
@@ -26,28 +27,16 @@ public class Cursor {
 
         ImageIcon ii = new ImageIcon("IDEA/Images/Tactical/Cursor/Cursor.png");
         image = ii.getImage();
-        x=0;
-        y=0;
         select=false;
-        longX=x+10;//def du la longueur du curseur pareil en dessous
-        longY=y+10;
+
     }
 
-    public int getCurseX(){return x;}
+    public int getX(){return x;}
 
-    public int getCurseY(){return y;}
+    public int getY(){return y;}
 
     public boolean getEtatCurse(){return select;}
 
-    public void setCurseX(int nx){
-        x=x+nx;
-        longX=longX+nx;
-    }
-
-    public void setCurseY(int ny){
-        y=y+ny;
-        longY=longY+ny;
-    }
 
     public void move() {
         x += dx;

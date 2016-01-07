@@ -65,7 +65,7 @@ public class RenderPanel extends JPanel implements ActionListener {
         }
 
             //curseur
-            g.drawImage(model.c.getImage(), model.c.getCurseX(), model.c.getCurseY(), this);//curseur
+            g.drawImage(model.c.getImage(), model.c.getX(), model.c.getY(), this);//curseur
 
 
     }

@@ -7,14 +7,13 @@ import java.awt.event.KeyEvent;
 /**
  * Created by Kiéran on 23/10/2015.
  */
-public class Unite {
+public class Unite extends Sprite {
     private static int direction; // sera en abstract
-    public int x, y;
+    //public int x, y;
     public int etat;
     public boolean isSelect;
     public int DEPLACEMENT_MAX = 5;
     public boolean side;
-    public Image image;
     private int dx;
     private int dy;
 
@@ -27,8 +26,8 @@ public class Unite {
     public static final int UP = 1, RIGHT = 2, DOWN = 3, LEFT = 4;
 
     public Unite(int posX, int posY, int dep,boolean ami){
+        super(posX,posY);
         direction = RIGHT;
-        x = posX; y = posY;
         DEPLACEMENT_MAX=dep;
         isSelect=false;
     //    ImageIcon ii = new ImageIcon("IDEA/Images/Tactical/Batiment/Batiment.png");//test image

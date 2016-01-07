@@ -36,7 +36,7 @@ public class Model {
         city = new Ville();
         qg = new QG(300,200);
         ecole= new BFormation(1000,200);
-        c=new Cursor();
+        c=new Cursor(100,100);
         tutur = new R17(300,100,5,true);
         b = new British(500,200,5,true);
         inf = new Infanterie(500,200,5,true);
