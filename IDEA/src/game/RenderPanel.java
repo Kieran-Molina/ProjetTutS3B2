@@ -18,10 +18,25 @@ public class RenderPanel extends JPanel implements ActionListener {
         model = m;
         vue = v;
         setLayout(new GridLayout(50,50,0,0)); //PB
-        addKeyListener((KeyListener) new TAdapter());
+        addKeyListener( new TAdapter());
         setFocusable(true);
         timer = new Timer(model.DELAY, this);
         timer.start();
+    }
+
+    public void deplacer(int x, int y){
+        setLocation(getX()+x , getY()+y);
+        if (getX() > 0) setLocation(0,getY());
+        if (getY() > 0) setLocation(getX(),0);
+
+        int hmax = getParent().getWidth() - model.getMap().getWidth(null);
+        int lmax = getParent().getHeight() - model.getMap().getHeight(null);
+
+        if (getX() < hmax) setLocation(hmax,getY());
+        if (getY() < lmax) setLocation(getX(),lmax);
+
+
+        revalidate();
     }
 
     protected void paintComponent(Graphics g){
