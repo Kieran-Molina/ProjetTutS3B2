@@ -60,6 +60,15 @@ public class Cursor {
         if (y < 1) {
             y = 1;
         }
+
+        if (x > 4900) {
+            x =4900;
+        }
+
+        if (y >4900) {
+            y = 4900;
+        }
+        
     }
 
     public void setCurseSelect(){
