@@ -3,6 +3,7 @@ package game;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
 
 /**
  * Created by Kiéran on 15/10/2015.
@@ -54,5 +55,12 @@ public class Vue extends JFrame{
 
     public void setControlMenu(ActionListener listener) {
         // xxx.addActionListener(listener);
+    }
+
+    public void setControlKey(KeyAdapter listener) {
+        addKeyListener(listener);
+        model.movePanel.addKeyListener(listener);
+        model.movePanel.renderPanel.addKeyListener(listener);
+
     }
 }
