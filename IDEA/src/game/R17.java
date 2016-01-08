@@ -23,9 +23,7 @@ public class R17 extends Unite {
 
         loadImage("IDEA/Images/Tactical/Unite/Renault_FT17/Normal/Déplacement_LEFT/Renault_FT_17_Deplacement_1.png");
         getImageDimensions();
-        //ImageIcon ii = new ImageIcon("IDEA/Images/Tactical/Unite/Renault_FT17/Normal/Déplacement_LEFT/Renault_FT_17_Deplacement_1.png");
-        //ImageIcon ii = new ImageIcon("IDEA/Images/Tactical/Unite/Renault_FT17/DeplacementLEFT.avi");
-        //image = ii.getImage();
+        force=8;
     }
 
 

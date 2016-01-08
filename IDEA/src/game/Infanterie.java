@@ -22,6 +22,7 @@ public class Infanterie extends Unite {
         super(posX, posY, dep, ami);
         loadImage("IDEA/Images/Tactical/Unite/Infanterie/Normal/Déplacement_LEFT/Infanterie_Deplacement_1.png");
         getImageDimensions();
+        force=2;
 
     }
 

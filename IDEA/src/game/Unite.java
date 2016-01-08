@@ -26,12 +26,11 @@ public class Unite extends Sprite {
     private static final ImageIcon img_LEFT = new ImageIcon("IDEA/Images/Tactical/Unite/Default/left.png");
     public static final int UP = 1, RIGHT = 2, DOWN = 3, LEFT = 4;
 
-    public Unite(int posX, int posY, int dep,boolean ami,int f){
+    public Unite(int posX, int posY, int dep,boolean ami){
         super(posX,posY);
         direction = RIGHT;
         DEPLACEMENT_MAX=dep;
         isSelect=false;
-        force=f;
 
 
     }

@@ -22,6 +22,7 @@ public class British extends Unite {
         super(posX, posY, dep, ami);
         loadImage("IDEA/Images/Tactical/Unite/British MK V/Normal/Déplacement_LEFT/British_Deplacement_1.png");
         getImageDimensions();
+        force=7;
     }
 
 
