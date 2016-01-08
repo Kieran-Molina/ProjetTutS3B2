@@ -62,6 +62,10 @@ public class RenderPanel extends JPanel implements ActionListener {
             g.drawImage(model.armee.getImage(), model.tutur.getX(), model.tutur.getY(), this);
             g.drawImage(model.b.getImage(), model.b.getX(), model.b.getY(), this);
             g.drawImage(model.inf.getImage(), model.inf.getX(), model.inf.getY(), this);
+            g.drawImage(model.rolf.getImage(), model.rolf.getX(), model.rolf.getY(), this);
+            g.drawImage(model.elga.getImage(), model.elga.getX(), model.elga.getY(), this);
+            g.drawImage(model.bilbon.getImage(), model.bilbon.getX(), model.bilbon.getY(), this);
+            g.drawImage(model.frodon.getImage(), model.frodon.getX(), model.frodon.getY(), this);
         }
 
             //curseur
