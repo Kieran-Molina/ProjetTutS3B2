@@ -10,13 +10,14 @@ import java.awt.event.KeyEvent;
 public class Unite extends Sprite {
     private static int direction; // sera en abstract
     //public int x, y;
-    public int etat;
-    public boolean isSelect;
-    public int DEPLACEMENT_MAX = 5;
-    public boolean side;
-    public int force;
-    private int dx;
-    private int dy;
+    protected int etat;//jauge d'énergie
+    protected boolean isSelect;//savoir si il est selectionner avec le curseur
+    protected int DEPLACEMENT_MAX;//nombre de case de deplacement
+    protected boolean side;//ami= true ;enemie=false
+    protected int force;//les degat que fait une unite
+    protected int prix;//ce que coute une unité
+    protected int dx;//dir de depl
+    protected int dy;//pareil
 
 
     //--- CONSTANTES ---//
@@ -118,4 +119,6 @@ public class Unite extends Sprite {
             b.prendDegats(a.getForce());
         }
     }
+
+    public int getPrix(){return prix;}
 }
