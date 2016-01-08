@@ -14,6 +14,7 @@ public class Unite extends Sprite {
     public boolean isSelect;
     public int DEPLACEMENT_MAX = 5;
     public boolean side;
+    public int force;
     private int dx;
     private int dy;
 
@@ -25,13 +26,13 @@ public class Unite extends Sprite {
     private static final ImageIcon img_LEFT = new ImageIcon("IDEA/Images/Tactical/Unite/Default/left.png");
     public static final int UP = 1, RIGHT = 2, DOWN = 3, LEFT = 4;
 
-    public Unite(int posX, int posY, int dep,boolean ami){
+    public Unite(int posX, int posY, int dep,boolean ami,int f){
         super(posX,posY);
         direction = RIGHT;
         DEPLACEMENT_MAX=dep;
         isSelect=false;
-    //    ImageIcon ii = new ImageIcon("IDEA/Images/Tactical/Batiment/Batiment.png");//test image
-      //  image = ii.getImage();//pareil
+        force=f;
+
 
     }
 
@@ -107,5 +108,15 @@ public class Unite extends Sprite {
         if (key == KeyEvent.VK_DOWN) {dy = 0;}
     }
 
+    public int getForce(){return force;}
 
+    public void setForce(int f){force=f;}
+
+    public boolean getSide(){return side;}
+
+    public void attack(Unite a, Unite b){
+        if (a.getSide()==true && b.getSide()==false||a.getSide()==false&&b.getSide()==true){
+            b.prendDegats(a.getForce());
+        }
+    }
 }
