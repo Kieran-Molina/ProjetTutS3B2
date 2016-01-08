@@ -23,6 +23,12 @@ public class Model {
     public BFormation ecole;
     public Cursor c;
     public R17 tutur;
+    public AllemandLeger rolf;
+    public AllemandLourd elga;
+    public Grenadier bilbon;
+    public GrenadierEnnemi frodon;
+
+
     protected int DELAY = 4;
 
     ///// IMAGES /////
@@ -40,6 +46,10 @@ public class Model {
         tutur = new R17(300,100,5,true);
         b = new British(500,200,5,true);
         inf = new Infanterie(500,200,5,true);
+        rolf = new AllemandLeger(700,700,5,false);
+        elga = new AllemandLourd(800,900,5,false);
+        bilbon = new Grenadier(900,1100,5,false);
+        frodon = new GrenadierEnnemi(1100,1300,5,false);
 
         ///// IMAGES /////
         map = new ImageIcon("IDEA/Images/Tactical/Map/MapVierge.png").getImage();

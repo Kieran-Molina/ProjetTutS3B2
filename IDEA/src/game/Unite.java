@@ -66,9 +66,9 @@ public class Unite extends Sprite {
                 return img_RIGHT;
         }
     }
-    public Image getImage() {
+    /*public Image getImage() {
         return image;
-    }//test d'image
+    }//test d'image*/
 
     public int getX(){return x;}
     public int getY(){return y;}
