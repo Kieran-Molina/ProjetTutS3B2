@@ -23,6 +23,7 @@ public class British extends Unite {
         loadImage("IDEA/Images/Tactical/Unite/British MK V/Normal/Déplacement_LEFT/British_Deplacement_1.png");
         getImageDimensions();
         force=7;
+        prix=750;
     }
 
 

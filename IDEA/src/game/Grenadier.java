@@ -22,6 +22,7 @@ public class Grenadier extends Unite {
         loadImage("IDEA/Images/Tactical/Unite/Grenadier/Normal/Déplacement_LEFT/Grenadier_Deplacement_1.png");
         getImageDimensions();
         force=4;
+        prix=75;
 
     }
 

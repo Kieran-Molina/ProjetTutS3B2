@@ -22,6 +22,7 @@ public class AllemandLeger extends Unite {
 
         loadImage("IDEA/Images/Tactical/Unite/AllemandLeger/Normal/Déplacement_LEFT/AllemandLeger_Deplacement_1.png");
         getImageDimensions();
+        prix=500;
     }
 
 

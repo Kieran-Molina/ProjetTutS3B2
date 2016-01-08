@@ -21,6 +21,7 @@ public class AllemandLourd extends Unite {
         force=5;
         loadImage("IDEA/Images/Tactical/Unite/AllemandLourd/Normal/Déplacement_LEFT/AllemandLourd_Deplacement_1.png");
         getImageDimensions();
+        prix=750;
     }
 
 

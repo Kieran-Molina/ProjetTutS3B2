@@ -23,6 +23,7 @@ public class InfanterieEnnemi extends Unite {
         loadImage("IDEA/Images/Tactical/Unite/InfanterieEnnemi/Normal/Déplacement_LEFT/InfanterieEnnemi_Deplacement_1.png");
         getImageDimensions();
         force=2;
+        prix=50;
     }
 
 

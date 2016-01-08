@@ -23,6 +23,7 @@ public class GrenadierEnnemi extends Unite {
         loadImage("IDEA/Images/Tactical/Unite/GrenadierEnnemi/Normal/Déplacement_LEFT/GrenadierEnnemi_Deplacement_1.png");
         getImageDimensions();
         force=4;
+        prix=75;
     }
 
 
