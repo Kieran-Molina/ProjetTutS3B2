@@ -41,9 +41,7 @@ public class Sprite {
         return x;
     }
 
-    public int getY() {
-        return y;
-    }
+    public int getY() {return y;}
 
     public boolean isVisible() {
         return vis;

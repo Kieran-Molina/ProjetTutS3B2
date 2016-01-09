@@ -7,16 +7,17 @@ import java.awt.event.KeyEvent;
 /**
  * Created by Kiéran on 23/10/2015.
  */
-public class Unite {
+public class Unite extends Sprite {
     private static int direction; // sera en abstract
-    public int x, y;
-    public int etat;
-    public boolean isSelect;
-    public int DEPLACEMENT_MAX = 5;
-    public boolean side;
-    public Image image;
-    private int dx;
-    private int dy;
+    //public int x, y;
+    protected int etat;//jauge d'énergie
+    protected boolean isSelect;//savoir si il est selectionner avec le curseur
+    protected int DEPLACEMENT_MAX;//nombre de case de deplacement
+    protected boolean side;//ami= true ;enemie=false
+    protected int force;//les degat que fait une unite
+    protected int prix;//ce que coute une unité
+    protected int dx;//dir de depl
+    protected int dy;//pareil
 
 
     //--- CONSTANTES ---//
@@ -27,13 +28,11 @@ public class Unite {
     public static final int UP = 1, RIGHT = 2, DOWN = 3, LEFT = 4;
 
     public Unite(int posX, int posY, int dep,boolean ami){
+        super(posX,posY);
         direction = RIGHT;
-        x = posX; y = posY;
         DEPLACEMENT_MAX=dep;
         isSelect=false;
-    //    ImageIcon ii = new ImageIcon("IDEA/Images/Tactical/Batiment/Batiment.png");//test image
-      //  image = ii.getImage();//pareil
-
+        etat=10;
     }
 
     public void deplaceUnite(int depX, int depY){
@@ -66,9 +65,6 @@ public class Unite {
                 return img_RIGHT;
         }
     }
-    public Image getImage() {
-        return image;
-    }//test d'image
 
     public int getX(){return x;}
     public int getY(){return y;}
@@ -80,8 +76,24 @@ public class Unite {
     public void move() {
         x += dx;
         y += dy;
+
+        if (x < 1) {
+            x = 1;
+        }
+
+        if (y < 1) {
+            y = 1;
+        }
+
+        if (x > 4900) {
+            x =4900;
+        }
+
+        if (y >4900) {
+            y = 4900;
+        }
     }
-    public void keyPressed(KeyEvent e) {
+   /* public void keyPressed(KeyEvent e) {
 
         int key = e.getKeyCode();
 
@@ -106,7 +118,24 @@ public class Unite {
         if (key == KeyEvent.VK_UP) {dy = 0;}
 
         if (key == KeyEvent.VK_DOWN) {dy = 0;}
+    }*/
+
+    public int getForce(){return force;}
+
+    public void setForce(int f){force=f;}
+
+    public boolean getSide(){return side;}
+
+    public void attack(Unite a, Unite b){
+        if (a.getSide()==true && b.getSide()==false||a.getSide()==false&&b.getSide()==true){
+            b.prendDegats(a.getForce());
+        }
     }
 
+    public int getPrix(){return prix;}
 
+    public String getTextEtat(int etat){
+        String text = Integer.toString(etat);
+        return text;
+    }
 }
