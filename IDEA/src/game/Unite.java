@@ -73,9 +73,6 @@ public class Unite extends Sprite {
         }
     }
 
-    public int getX(){return x;}
-    public int getY(){return y;}
-
     public boolean getSelect(){return isSelect;}
     public void trueSelect(){isSelect=true;}
     public void falseSelect(){isSelect=false;}
