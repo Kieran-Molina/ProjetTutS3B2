@@ -30,17 +30,17 @@ Ligne 28 : de 10 à 15 // de 24 à 29 // de 39 à 43
 Ligne 29 : de 10 à 17 // de 24 à 29 // de 41 à 44
 Ligne 30 : de 10 à 19 // de 26 à 29 // de 42 à 45
 Ligne 31 : de 10 à 17 // de 28 à 29 // de 43 à 44
-Ligne 31 : de 7 à 17 // de 44 à 45
-Ligne 32 : de 6 à 14 // de 16 à 19 // 24 // 44 à 45
-Ligne 33 : de 8 à 19 // de 23 à 24 // 44
-Ligne 34 : de 9 à 15 // de 22 à 26 // de 44 à 45
-Ligne 35 : de 8 à 13 // de 21 à 27 // de 43 à 45
-Ligne 36 : de 7 à 13 // de 20 à 27 // de 42 à 45
-Ligne 37 : de 20 à 28 // de 36 à 42
-Ligne 38 : de 20 à 30 // de 36 à 42
-Ligne 39 : de 6 à 9 // 25 // de 27 à 29 // de 37 à 43
-Ligne 40 : de 5 à 10 // de 38 à 43
-Ligne 41 : de 5 à 11 // de 39 à 42
-Ligne 42 : de 5 à 11 // de 39 à 40
-Ligne 43 : de 7 à 11
-Ligne 44 : de 8 à 12
+Ligne 32 : de 7 à 17 // de 44 à 45
+Ligne 33 : de 6 à 14 // de 16 à 19 // 24 // 44 à 45
+Ligne 34 : de 8 à 19 // de 23 à 24 // 44
+Ligne 35 : de 9 à 15 // de 22 à 26 // de 44 à 45
+Ligne 36 : de 8 à 13 // de 21 à 27 // de 43 à 45
+Ligne 37 : de 7 à 13 // de 20 à 27 // de 42 à 45
+Ligne 38 : de 20 à 28 // de 36 à 42
+Ligne 39 : de 20 à 30 // de 36 à 42
+Ligne 40 : de 6 à 9 // 25 // de 27 à 29 // de 37 à 43
+Ligne 41 : de 5 à 10 // de 38 à 43
+Ligne 42 : de 5 à 11 // de 39 à 42
+Ligne 43 : de 5 à 11 // de 39 à 40
+Ligne 44 : de 7 à 11
+Ligne 45 : de 8 à 12
