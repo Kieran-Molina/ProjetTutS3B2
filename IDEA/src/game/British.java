@@ -20,9 +20,10 @@ public class British extends Unite {
     public British(int posX, int posY, int dep, boolean ami) {
 
         super(posX, posY, dep, ami);
-        ImageIcon ii = new ImageIcon("IDEA/Images/Tactical/Unite/British MK V/Normal/Déplacement_LEFT/British_Deplacement_1.png");
-        //ImageIcon ii = new ImageIcon("IDEA/Images/Tactical/Unite/Renault_FT17/DeplacementLEFT.avi");
-        image = ii.getImage();
+        loadImage("IDEA/Images/Tactical/Unite/British MK V/Normal/Déplacement_LEFT/British_Deplacement_1.png");
+        getImageDimensions();
+        force=7;
+        prix=750;
     }
 
 

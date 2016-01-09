@@ -20,9 +20,12 @@ public class R17 extends Unite {
     public R17(int posX, int posY, int dep, boolean ami) {
 
         super(posX, posY, dep, ami);
-        ImageIcon ii = new ImageIcon("IDEA/Images/Tactical/Unite/Renault_FT17/Normal/Déplacement_LEFT/Renault_FT_17_Deplacement_1.png");
-        //ImageIcon ii = new ImageIcon("IDEA/Images/Tactical/Unite/Renault_FT17/DeplacementLEFT.avi");
-        image = ii.getImage();
+        if(ami==true){
+            loadImage("IDEA/Images/Tactical/Unite/Renault_FT17/Normal/Déplacement_LEFT/Renault_FT_17_Deplacement_1.png");}
+        else{loadImage("IDEA/Images/Tactical/Unite/Renault_FT17/Normal/Déplacement_RIGHT/Renault_FT_17_Deplacement_1.png");}
+        getImageDimensions();
+        force=8;
+        prix=500;
     }
 
 

@@ -20,9 +20,14 @@ public class Infanterie extends Unite {
     public Infanterie(int posX, int posY, int dep, boolean ami) {
 
         super(posX, posY, dep, ami);
-        ImageIcon ii = new ImageIcon("IDEA/Images/Tactical/Unite/Infanterie/Normal/Déplacement_LEFT/Infanterie_Deplacement_1.png");
-        //ImageIcon ii = new ImageIcon("IDEA/Images/Tactical/Unite/Renault_FT17/DeplacementLEFT.avi");
-        image = ii.getImage();
+        if(ami==true){
+            loadImage("IDEA/Images/Tactical/Unite/Infanterie/Normal/Déplacement_LEFT/Infanterie_Deplacement_1.png");}
+
+        else{loadImage("IDEA/Images/Tactical/Unite/InfanterieEnnemi/Normal/Déplacement_LEFT/InfanterieEnnemi_Deplacement_1.png");}
+        getImageDimensions();
+        force=2;
+        prix=50;
+
     }
 
 
