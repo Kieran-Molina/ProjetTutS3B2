@@ -15,18 +15,7 @@ public class Model {
     public ArrayList<Unite> units;
     public ArrayList<Unite> ennemis;
     public ArrayList<Batiment> ville;
-    public QG qg;
-    public British b;
-    public Infanterie inf;
-    public Infanterie inf2;
-    public BFormation ecole;
     public Cursor c;
-    public R17 tutur;
-    public R17 tutur2;
-    public AllemandLeger rolf;
-    public AllemandLourd elga;
-    public Grenadier bilbon;
-    public Grenadier sam;
 
 
     protected int DELAY = 4;
@@ -36,28 +25,33 @@ public class Model {
 
     public Model(){
         units = new ArrayList<Unite>();
+
+        units.add(new R17(300,100,true));
+        units.add(new British(500,200,true));
+        units.add(new Infanterie(500,200,true));
+        units.add(new Grenadier(100,100,true));
+
+
         ennemis = new ArrayList<Unite>();
+
+        ennemis.add(new R17(300,100,false));
+        ennemis.add(new Infanterie(500,600,false));
+        ennemis.add(new AllemandLeger(700,700,false));
+        ennemis.add(new AllemandLourd(200,100,false));
+        ennemis.add(new Grenadier(200,100,false));
+
+
         ville = new ArrayList<Batiment>();
-        qg = new QG(300,200);
-        ecole= new BFormation(1000,200);
+
+        ville.add(new QG(300,4400));
+        ville.add(new QG(4100,100));
+        ville.add(new BFormation(700,200));
+
         c=new Cursor(100,100);
-        tutur = new R17(300,100,5,true);
-        tutur2 = new R17(300,100,5,false);
-        b = new British(500,200,5,true);
-        inf = new Infanterie(500,200,5,true);
-        inf2 = new Infanterie(500,600,5,false);
-        rolf = new AllemandLeger(700,700,5,false);
-        elga = new AllemandLourd(200,100,5,false);
-        bilbon = new Grenadier(100,100,5,true);
-        sam = new Grenadier(200,100,5,false);
 
         ///// IMAGES /////
         map = new ImageIcon("IDEA/Images/Tactical/Map/MapVierge.png").getImage();
-        units.add(tutur);
-        units.add(new Infanterie(1000, 5, 5, true));
-        ennemis.add(tutur2);//test ennemis
-        ville.add(qg);
-        ville.add(ecole);
+
     }
 
     public Image getMap(){ return map; }
