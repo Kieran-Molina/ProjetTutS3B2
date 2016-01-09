@@ -88,17 +88,17 @@ public class RenderPanel extends JPanel implements ActionListener {
         @Override
         public void keyReleased(KeyEvent e) {
             model.c.keyReleased(e);
-            model.tutur.keyReleased(e);
+           /* model.tutur.keyReleased(e);
             model.b.keyReleased(e);
-            model.inf.keyReleased(e);
+            model.inf.keyReleased(e);*/
         }
 
         @Override
         public void keyPressed(KeyEvent e) {
             model.c.keyPressed(e);
-            model.tutur.keyPressed(e);
+          /*  model.tutur.keyPressed(e);
             model.b.keyPressed(e);
-            model.inf.keyReleased(e);
+            model.inf.keyReleased(e);*/
         }
     }
 }

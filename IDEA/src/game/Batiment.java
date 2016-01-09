@@ -9,7 +9,7 @@ import java.awt.*;
 public class Batiment extends Sprite {
     protected int impot;//a chaque tour le NB de batiment ramene de l'argent
     protected boolean capture;//si false, le batiment est neutre
-    protected boolean batSide;
+    protected boolean batSide;//true batment ami rapport une somme au camp a lequel elle appartient
 
     public Batiment (int xb,int yb){
         super(xb,yb);
@@ -20,6 +20,7 @@ public class Batiment extends Sprite {
     }
 
     public int getPrix(){return impot;}
+
     public boolean getCapture(){return capture;}
 
     public void setCapture(){
