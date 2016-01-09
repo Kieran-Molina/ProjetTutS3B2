@@ -50,22 +50,22 @@ public class RenderPanel extends JPanel implements ActionListener {
 
         for (Batiment city : model.ville) {
             //batiment
-            g.drawImage(model.qg.getImage(), model.qg.getX(), model.qg.getY(), this);//QG
-            g.drawImage(model.ecole.getImage(), model.ecole.getX(), model.ecole.getY(), this);//batformation
-           // g.drawImage(model.city.getImage(),model.ville.getX(),model.ville.getY(),this);
+            //g.drawImage(model.qg.getImage(), model.qg.getX(), model.qg.getY(), this);//QG
+            //g.drawImage(model.ecole.getImage(), model.ecole.getX(), model.ecole.getY(), this);//batformation
+            g.drawImage(city.getImage(),city.getX(),city.getY(),this);
         }
 
         //Unités
         for (Unite uni : model.units) {//ami
-             g.drawImage(uni.getImage(),uni.getX(),uni.getY(),this);
-            g.drawString(model.tutur.getTextEtat(model.tutur.getEtat()),model.tutur.getX()+10,model.tutur.getY()+60);//texte de l'affichage de l'état
-            g.drawString(model.inf.getTextEtat(model.inf.getEtat()),model.inf.getX()+10,model.inf.getY()+60);//texte de l'affichage de l'état
+            g.drawImage(uni.getImage(),uni.getX(),uni.getY(),this);
+            //g.drawString(model.tutur.getTextEtat(model.tutur.getEtat()),model.tutur.getX()+10,model.tutur.getY()+60);//texte de l'affichage de l'état
+            //g.drawString(model.inf.getTextEtat(model.inf.getEtat()),model.inf.getX()+10,model.inf.getY()+60);//texte de l'affichage de l'état
 
         }
 
-        for (Unite mauv : model.ennemis) {//ami
+        for (Unite mauv : model.ennemis) {//ennemi
             g.drawImage(mauv.getImage(),mauv.getX(),mauv.getY(),this);
-            g.drawString(model.tutur2.getTextEtat(1000),model.tutur2.getX()+10,model.tutur2.getY()+60);//texte de l'affichage de l'état
+            //g.drawString(model.tutur2.getTextEtat(1000),model.tutur2.getX()+10,model.tutur2.getY()+60);//texte de l'affichage de l'état
 
         }
 
@@ -77,9 +77,13 @@ public class RenderPanel extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         model.c.move();
-        model.tutur.move();
-        model.inf.move();
-        model.b.move();
+
+        for(Unite unit :model.units){
+            unit.move();
+        }
+        /*for(Unite ennemi :model.ennemis){
+            ennemi.move();
+        }*/
         repaint();
     }
 
@@ -88,17 +92,11 @@ public class RenderPanel extends JPanel implements ActionListener {
         @Override
         public void keyReleased(KeyEvent e) {
             model.c.keyReleased(e);
-           /* model.tutur.keyReleased(e);
-            model.b.keyReleased(e);
-            model.inf.keyReleased(e);*/
         }
 
         @Override
         public void keyPressed(KeyEvent e) {
             model.c.keyPressed(e);
-          /*  model.tutur.keyPressed(e);
-            model.b.keyPressed(e);
-            model.inf.keyReleased(e);*/
         }
     }
 }

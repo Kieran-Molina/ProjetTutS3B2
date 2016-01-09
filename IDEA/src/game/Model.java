@@ -41,20 +41,20 @@ public class Model {
         qg = new QG(300,200);
         ecole= new BFormation(1000,200);
         c=new Cursor(100,100);
-        tutur = new R17(300,100,true);
-        tutur2 = new R17(300,100,false);
-        b = new British(500,200,true);
-        inf = new Infanterie(500,200,true);
-        inf2 = new Infanterie(500,600,false);
-        rolf = new AllemandLeger(700,700,false);
-        elga = new AllemandLourd(200,100,false);
-        bilbon = new Grenadier(100,100,true);
-        sam = new Grenadier(200,100,false);
+        tutur = new R17(300,100,5,true);
+        tutur2 = new R17(300,100,5,false);
+        b = new British(500,200,5,true);
+        inf = new Infanterie(500,200,5,true);
+        inf2 = new Infanterie(500,600,5,false);
+        rolf = new AllemandLeger(700,700,5,false);
+        elga = new AllemandLourd(200,100,5,false);
+        bilbon = new Grenadier(100,100,5,true);
+        sam = new Grenadier(200,100,5,false);
 
         ///// IMAGES /////
         map = new ImageIcon("IDEA/Images/Tactical/Map/MapVierge.png").getImage();
         units.add(tutur);
-        units.add(new Infanterie(1000, 5, true));
+        units.add(new Infanterie(1000, 5, 5, true));
         ennemis.add(tutur2);//test ennemis
         ville.add(qg);
         ville.add(ecole);
@@ -65,8 +65,6 @@ public class Model {
     public int getDELAY(){return DELAY;}
     public void setDELAYUp(){DELAY=DELAY-1;}//augmenter la vitesse
     public void setDELAYDown(){DELAY=DELAY+1;}//la baisse
-
-
 
 
 
