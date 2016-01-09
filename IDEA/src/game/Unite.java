@@ -127,11 +127,6 @@ public class Unite extends Sprite {
 
     public boolean getSide(){return side;}
 
-    public void attack(Unite a, Unite b){
-        if (a.getSide() && !b.getSide()|| !a.getSide()&& b.getSide()){
-            b.prendDegats(a.getForce());
-        }
-    }
 
     public int getPrix(){return prix;}
 
