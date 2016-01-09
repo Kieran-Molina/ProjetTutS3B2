@@ -57,9 +57,9 @@ public class Model {
 
         ///// IMAGES /////
         map = new ImageIcon("IDEA/Images/Tactical/Map/MapVierge.png").getImage();
-        armee.addUnite(new R17(5,5,5,true));
-        armee.addUnite(new R17(100,5,5,true));
-        armee.addUnite(new R17(200,5,5,true));
+        units.add(new R17(5,5,5,true));
+        units.add(new R17(100,5,5,true));
+        units.add(new R17(200,5,5,true));
         city.addBat();
         city.addBat();
         units.add(new R17(5,5,5,true)); //test ami affichage

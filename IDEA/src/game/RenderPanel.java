@@ -47,26 +47,27 @@ public class RenderPanel extends JPanel implements ActionListener {
         //fond map
         g.drawImage(model.getMap(),0,0,this);
 
+
         for (Batiment city: model.ville) {
             //batimment
             g.drawImage(model.qg.getImage(), model.qg.getX(), model.qg.getY(), this);//QG
             g.drawImage(model.ecole.getImage(), model.ecole.getX(), model.ecole.getY(), this);//QG
             //g.drawImage(model.ville.getImage(),model.ville.getX(),model.ville.getY,this);
-         //   g.drawImage(model.city.getImage(), city.getX(), city.getY(), this);
+            g.drawImage(model.city.getImage(), city.getX(), city.getY(), this);
         }
 
         //Unités
         for (Unite uni : model.units) {
-            // g.drawImage(uni.getImageIcon().getImage(),uni.getX()*100,uni.getY()*100,this);
+             g.drawImage(uni.getImageIcon().getImage(),uni.getX(),uni.getY(),this);
             //vehicule
             //  g.drawImage(R17.getImageIcon().getImage(),uni.getX()*100,uni.getY()*100,this);
-            //g.drawImage(model.tutur.getImage(), model.tutur.getX(), model.tutur.getY(), this);
+            g.drawImage(model.tutur.getImage(), model.tutur.getX(), model.tutur.getY(), this);
             //g.drawImage(model.tutur2.getImage(), model.tutur2.getX(), model.tutur2.getY(), this);
-            //g.drawString(model.tutur2.getTextEtat(model.tutur2.getEtat()),model.tutur2.getX(),model.tutur2.getY()+60);//texte de l'affichage de l'état
+            g.drawString(model.tutur.getTextEtat(model.tutur.getEtat()),model.tutur.getX()+10,model.tutur.getY()+60);//texte de l'affichage de l'état
            // g.drawImage(model.armee.getImage(), model.tutur.getX(), model.tutur.getY(), this);
             //g.drawImage(model.b.getImage(), model.b.getX(), model.b.getY(), this);
-            g.drawImage(model.inf.getImage(), model.inf.getX(), model.inf.getY(), this);
-            g.drawImage(model.inf2.getImage(), model.inf2.getX(), model.inf2.getY(), this);
+            //g.drawImage(model.inf.getImage(), model.inf.getX(), model.inf.getY(), this);
+           // g.drawImage(model.inf2.getImage(), model.inf2.getX(), model.inf2.getY(), this);
             //g.drawImage(model.rolf.getImage(), model.rolf.getX(), model.rolf.getY(), this);
             //g.drawImage(model.elga.getImage(), model.elga.getX(), model.elga.getY(), this);*/
            // g.drawImage(model.bilbon.getImage(), model.bilbon.getX(), model.bilbon.getY(), this);
@@ -88,7 +89,6 @@ public class RenderPanel extends JPanel implements ActionListener {
         model.c.move();
         model.tutur.move();
         model.inf.move();
-        model.inf.move();
         model.b.move();
         model.city.addBat();//
         model.city.getVille();//it doesn't work
@@ -100,7 +100,7 @@ public class RenderPanel extends JPanel implements ActionListener {
         @Override
         public void keyReleased(KeyEvent e) {
             model.c.keyReleased(e);
-            //model.tutur.keyReleased(e);
+            model.tutur.keyReleased(e);
             model.b.keyReleased(e);
             model.inf.keyReleased(e);
         }
@@ -108,7 +108,7 @@ public class RenderPanel extends JPanel implements ActionListener {
         @Override
         public void keyPressed(KeyEvent e) {
             model.c.keyPressed(e);
-            //model.tutur.keyPressed(e);
+            model.tutur.keyPressed(e);
             model.b.keyPressed(e);
             model.inf.keyReleased(e);
         }
