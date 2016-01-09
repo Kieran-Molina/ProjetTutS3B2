@@ -70,13 +70,13 @@ public class Model {
     }
 
     public void attaquer(Unite attaque,Unite defense){
-        if (attaque.getSide() && defense.getSide()==false){
+        if (attaque.getSide() && !defense.getSide()){
             defense.prendDegats(attaque.getForce());
             if(defense.isDead()){
                 ennemis.remove(defense);
             }
 
-        }else if(attaque.getSide()==false&&defense.getSide()==true){
+        }else if(!attaque.getSide() && defense.getSide()){
             defense.prendDegats(attaque.getForce());
             if(defense.isDead()){
                 units.remove(defense);
