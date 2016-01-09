@@ -60,6 +60,21 @@ public class Model {
     public void setDELAYUp(){DELAY=DELAY-1;}//augmenter la vitesse
     public void setDELAYDown(){DELAY=DELAY+1;}//la baisse
 
+    public void attaquer(Unite attaque,Unite defense){
+        if (attaque.getSide() && defense.getSide()==false){
+            defense.prendDegats(attaque.getForce());
+            if(defense.isDead()){
+                ennemis.remove(defense);
+            }
+
+        }else if(attaque.getSide()==false&&defense.getSide()==true){
+            defense.prendDegats(attaque.getForce());
+            if(defense.isDead()){
+                units.remove(defense);
+            }
+        }
+    }
+
 
 
 }
