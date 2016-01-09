@@ -93,7 +93,7 @@ public class Unite extends Sprite {
             y = 4900;
         }
     }
-    public void keyPressed(KeyEvent e) {
+   /* public void keyPressed(KeyEvent e) {
 
         int key = e.getKeyCode();
 
@@ -118,7 +118,7 @@ public class Unite extends Sprite {
         if (key == KeyEvent.VK_UP) {dy = 0;}
 
         if (key == KeyEvent.VK_DOWN) {dy = 0;}
-    }
+    }*/
 
     public int getForce(){return force;}
 
