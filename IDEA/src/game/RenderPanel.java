@@ -40,47 +40,37 @@ public class RenderPanel extends JPanel implements ActionListener {
     }
 
     protected void paintComponent(Graphics g){
-        Font font = new Font("Verdana", Font.BOLD, 30);
+        Font font = new Font("Verdana", Font.BOLD, 30);//police pour l'affichage de l'état
         g.setFont(font);
-        g.setColor(Color.white);
+        g.setColor(Color.white);//couleur biensur
         super.paintComponent(g);
         //fond map
         g.drawImage(model.getMap(),0,0,this);
 
 
-        for (Batiment city: model.ville) {
-            //batimment
+        for (Batiment city : model.ville) {
+            //batiment
             g.drawImage(model.qg.getImage(), model.qg.getX(), model.qg.getY(), this);//QG
-            g.drawImage(model.ecole.getImage(), model.ecole.getX(), model.ecole.getY(), this);//QG
-            //g.drawImage(model.ville.getImage(),model.ville.getX(),model.ville.getY,this);
-            g.drawImage(model.city.getImage(), city.getX(), city.getY(), this);
+            g.drawImage(model.ecole.getImage(), model.ecole.getX(), model.ecole.getY(), this);//batformation
+           // g.drawImage(model.city.getImage(),model.ville.getX(),model.ville.getY(),this);
         }
 
         //Unités
-        for (Unite uni : model.units) {
-             g.drawImage(uni.getImageIcon().getImage(),uni.getX(),uni.getY(),this);
-            //vehicule
-            //  g.drawImage(R17.getImageIcon().getImage(),uni.getX()*100,uni.getY()*100,this);
-            g.drawImage(model.tutur.getImage(), model.tutur.getX(), model.tutur.getY(), this);
-            //g.drawImage(model.tutur2.getImage(), model.tutur2.getX(), model.tutur2.getY(), this);
+        for (Unite uni : model.units) {//ami
+             g.drawImage(uni.getImage(),uni.getX(),uni.getY(),this);
             g.drawString(model.tutur.getTextEtat(model.tutur.getEtat()),model.tutur.getX()+10,model.tutur.getY()+60);//texte de l'affichage de l'état
-           // g.drawImage(model.armee.getImage(), model.tutur.getX(), model.tutur.getY(), this);
-            //g.drawImage(model.b.getImage(), model.b.getX(), model.b.getY(), this);
-            //g.drawImage(model.inf.getImage(), model.inf.getX(), model.inf.getY(), this);
-           // g.drawImage(model.inf2.getImage(), model.inf2.getX(), model.inf2.getY(), this);
-            //g.drawImage(model.rolf.getImage(), model.rolf.getX(), model.rolf.getY(), this);
-            //g.drawImage(model.elga.getImage(), model.elga.getX(), model.elga.getY(), this);*/
-           // g.drawImage(model.bilbon.getImage(), model.bilbon.getX(), model.bilbon.getY(), this);
-            //g.drawString(model.bilbon.getTextEtat(model.bilbon.getEtat()),model.bilbon.getX(),model.bilbon.getY()+60);
-           // g.drawImage(model.sam.getImage(), model.sam.getX(), model.sam.getY(), this);
-            //g.drawString(model.sam.getTextEtat(model.sam.getEtat()),model.sam.getX(),model.sam.getY()+60);
-            //g.drawImage(model.frodon.getImage(), model.frodon.getX(), model.frodon.getY(), this);
-            //g.drawString(model.frodon.getTextEtat(model.frodon.getEtat()),model.frodon.getX(),model.frodon.getY()+60);
+            g.drawString(model.inf.getTextEtat(model.inf.getEtat()),model.inf.getX()+10,model.inf.getY()+60);//texte de l'affichage de l'état
+
+        }
+
+        for (Unite mauv : model.ennemis) {//ami
+            g.drawImage(mauv.getImage(),mauv.getX(),mauv.getY(),this);
+            g.drawString(model.tutur2.getTextEtat(1000),model.tutur2.getX()+10,model.tutur2.getY()+60);//texte de l'affichage de l'état
+
         }
 
             //curseur
             g.drawImage(model.c.getImage(), model.c.getX(), model.c.getY(), this);//curseur
-
 
     }
 
@@ -90,8 +80,6 @@ public class RenderPanel extends JPanel implements ActionListener {
         model.tutur.move();
         model.inf.move();
         model.b.move();
-        model.city.addBat();//
-        model.city.getVille();//it doesn't work
         repaint();
     }
 

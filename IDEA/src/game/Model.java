@@ -15,8 +15,6 @@ public class Model {
     public ArrayList<Unite> units;
     public ArrayList<Unite> ennemis;
     public ArrayList<Batiment> ville;
-    public Armee armee;
-    public Ville city;
     public QG qg;
     public British b;
     public Infanterie inf;
@@ -40,8 +38,6 @@ public class Model {
         units = new ArrayList<Unite>();
         ennemis = new ArrayList<Unite>();
         ville = new ArrayList<Batiment>();
-        armee = new Armee();
-        city = new Ville();
         qg = new QG(300,200);
         ecole= new BFormation(1000,200);
         c=new Cursor(100,100);
@@ -57,15 +53,11 @@ public class Model {
 
         ///// IMAGES /////
         map = new ImageIcon("IDEA/Images/Tactical/Map/MapVierge.png").getImage();
-        units.add(new R17(5,5,5,true));
-        units.add(new R17(100,5,5,true));
-        units.add(new R17(200,5,5,true));
-        city.addBat();
-        city.addBat();
-        units.add(new R17(5,5,5,true)); //test ami affichage
-        ennemis.add(new R17(100,100,5,false));//test ennemis
-        ville.add(new QG(600,0));
-        ville.add(new BFormation(2000,0));
+        units.add(tutur);
+        units.add(new Infanterie(1000, 5, 5, true));
+        ennemis.add(tutur2);//test ennemis
+        ville.add(qg);
+        ville.add(ecole);
     }
 
     public Image getMap(){ return map; }
