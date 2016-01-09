@@ -12,7 +12,7 @@ public class Unite extends Sprite {
     //public int x, y;
     protected int etat;//jauge d'énergie
     protected boolean isSelect;//savoir si il est selectionner avec le curseur
-    final static int DEPLACEMENT_MAX=5;//nombre de case de deplacement
+    final static int DEPLACEMENT_MAX=250;//nombre de case de deplacement
     protected boolean side;//ami= true ;enemie=false
     protected int force;//les degat que fait une unite
     protected int prix;//ce que coute une unité
@@ -55,9 +55,6 @@ public class Unite extends Sprite {
 
     public void prendDegats(int degats){
         etat-=degats;
-        if (isDead()){
-
-        }
     }
 
     public static ImageIcon getImageIcon(){

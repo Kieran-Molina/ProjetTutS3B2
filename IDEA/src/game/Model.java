@@ -61,11 +61,10 @@ public class Model {
     public void setDELAYDown(){DELAY=DELAY+1;}//la baisse
 
     public void creerUneUnite(Unite aCreer){
-        Unite nouvelleUnite=aCreer;
-        if(nouvelleUnite.getSide()) {
-            units.add(nouvelleUnite);
+        if(aCreer.getSide()) {
+            units.add(aCreer);
         }else{
-            ennemis.add(nouvelleUnite);
+            ennemis.add(aCreer);
         }
     }
 
