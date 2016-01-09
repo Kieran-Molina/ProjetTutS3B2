@@ -48,24 +48,19 @@ public class RenderPanel extends JPanel implements ActionListener {
         g.drawImage(model.getMap(),0,0,this);
 
 
-        for (Batiment city : model.ville) {
+        for (Batiment bat : model.ville) {
             //batiment
-            //g.drawImage(model.qg.getImage(), model.qg.getX(), model.qg.getY(), this);//QG
-            //g.drawImage(model.ecole.getImage(), model.ecole.getX(), model.ecole.getY(), this);//batformation
-            g.drawImage(city.getImage(),city.getX(),city.getY(),this);
+            g.drawImage(bat.getImage(),bat.getX(),bat.getY(),this);
         }
 
         //Unités
-        for (Unite uni : model.units) {//ami
-            g.drawImage(uni.getImage(),uni.getX(),uni.getY(),this);
-            //g.drawString(model.tutur.getTextEtat(model.tutur.getEtat()),model.tutur.getX()+10,model.tutur.getY()+60);//texte de l'affichage de l'état
-            //g.drawString(model.inf.getTextEtat(model.inf.getEtat()),model.inf.getX()+10,model.inf.getY()+60);//texte de l'affichage de l'état
+        for (Unite unit : model.units) {//ami
+            g.drawImage(unit.getImage(),unit.getX(),unit.getY(),this);
 
         }
 
-        for (Unite mauv : model.ennemis) {//ennemi
-            g.drawImage(mauv.getImage(),mauv.getX(),mauv.getY(),this);
-            //g.drawString(model.tutur2.getTextEtat(1000),model.tutur2.getX()+10,model.tutur2.getY()+60);//texte de l'affichage de l'état
+        for (Unite ennemi : model.ennemis) {//ennemi
+            g.drawImage(ennemi.getImage(),ennemi.getX(),ennemi.getY(),this);
 
         }
 
