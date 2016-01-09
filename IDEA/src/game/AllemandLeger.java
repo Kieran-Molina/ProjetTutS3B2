@@ -7,7 +7,6 @@ import java.awt.event.KeyEvent;
 public class AllemandLeger extends Unite {
 
     public AllemandLeger(int posX, int posY, int dep, boolean ami) {
-
         super(posX, posY, dep, ami);
         force=3;
 

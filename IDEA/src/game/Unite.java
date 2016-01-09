@@ -45,11 +45,19 @@ public class Unite extends Sprite {
         y+=depY;}
     }
 
+    public boolean isDead(){
+        if(etat<=0){
+            return true;
+        }
+        return false;
+    }
+
     public int getEtat(){return etat;}
+
     public void prendDegats(int degats){
         etat-=degats;
-        if (etat <= 0){
-            //destruction
+        if (isDead()){
+
         }
     }
 
@@ -138,4 +146,6 @@ public class Unite extends Sprite {
         String text = Integer.toString(etat);
         return text;
     }
+
+
 }

@@ -3,6 +3,8 @@ package game;
 import javax.swing.*;
 import java.awt.event.KeyEvent;
 
+import static java.lang.Math.random;
+
 /**
  * Created by nico on 06/01/16.
  */
@@ -16,7 +18,7 @@ public class Infanterie extends Unite {
 
         else{loadImage("IDEA/Images/Tactical/Unite/InfanterieEnnemi/Normal/Déplacement_LEFT/InfanterieEnnemi_Deplacement_1.png");}
         getImageDimensions();
-        force=2;
+        force=(int)(25+random()*(50-25));
         prix=50;
 
     }

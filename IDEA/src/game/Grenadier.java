@@ -3,6 +3,8 @@ package game;
 import javax.swing.*;
 import java.awt.event.KeyEvent;
 
+import static java.lang.Math.random;
+
 
 public class Grenadier extends Unite {
 
@@ -13,7 +15,7 @@ public class Grenadier extends Unite {
         loadImage("IDEA/Images/Tactical/Unite/Grenadier/Normal/Déplacement_LEFT/Grenadier_Deplacement_1.png");}
         else{loadImage("IDEA/Images/Tactical/Unite/GrenadierEnnemi/Normal/Déplacement_LEFT/GrenadierEnnemi_Deplacement_1.png");}
         getImageDimensions();
-        force=4;
+        force=(int)(50+random()*(80-50));
         prix=75;
 
     }
