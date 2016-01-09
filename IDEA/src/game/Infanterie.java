@@ -10,9 +10,9 @@ import static java.lang.Math.random;
  */
 public class Infanterie extends Unite {
 
-    public Infanterie(int posX, int posY, int dep, boolean ami) {
+    public Infanterie(int posX, int posY, boolean ami) {
 
-        super(posX, posY, dep, ami);
+        super(posX, posY,ami);
         if(ami==true){
             loadImage("IDEA/Images/Tactical/Unite/Infanterie/Normal/Déplacement_LEFT/Infanterie_Deplacement_1.png");}
 

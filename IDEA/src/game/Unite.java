@@ -12,7 +12,7 @@ public class Unite extends Sprite {
     //public int x, y;
     protected int etat;//jauge d'énergie
     protected boolean isSelect;//savoir si il est selectionner avec le curseur
-    protected int DEPLACEMENT_MAX;//nombre de case de deplacement
+    final static int DEPLACEMENT_MAX=5;//nombre de case de deplacement
     protected boolean side;//ami= true ;enemie=false
     protected int force;//les degat que fait une unite
     protected int prix;//ce que coute une unité
@@ -27,10 +27,9 @@ public class Unite extends Sprite {
     private static final ImageIcon img_LEFT = new ImageIcon("IDEA/Images/Tactical/Unite/Default/left.png");
     public static final int UP = 1, RIGHT = 2, DOWN = 3, LEFT = 4;
 
-    public Unite(int posX, int posY, int dep,boolean ami){
+    public Unite(int posX, int posY,boolean ami){
         super(posX,posY);
         direction = RIGHT;
-        DEPLACEMENT_MAX=dep;
         isSelect=false;
         etat=10;
     }

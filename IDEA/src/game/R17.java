@@ -10,9 +10,9 @@ import static java.lang.Math.random;
  */
 public class R17 extends Unite {
 
-    public R17(int posX, int posY, int dep, boolean ami) {
+    public R17(int posX, int posY, boolean ami) {
 
-        super(posX, posY, dep, ami);
+        super(posX, posY, ami);
         if(ami==true){
             loadImage("IDEA/Images/Tactical/Unite/Renault_FT17/Normal/Déplacement_LEFT/Renault_FT_17_Deplacement_1.png");}//if pour savoir que sprite selon l'armée
         else{loadImage("IDEA/Images/Tactical/Unite/Renault_FT17/Normal/Déplacement_RIGHT/Renault_FT_17_Deplacement_1.png");}

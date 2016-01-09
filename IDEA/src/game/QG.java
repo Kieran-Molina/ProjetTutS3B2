@@ -14,6 +14,4 @@ public class QG extends Batiment {
         getImageDimensions();
 
     }
-
-
 }
