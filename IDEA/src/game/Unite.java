@@ -32,8 +32,7 @@ public class Unite extends Sprite {
         direction = RIGHT;
         DEPLACEMENT_MAX=dep;
         isSelect=false;
-
-
+        etat=10;
     }
 
     public void deplaceUnite(int depX, int depY){
@@ -66,9 +65,6 @@ public class Unite extends Sprite {
                 return img_RIGHT;
         }
     }
-    /*public Image getImage() {
-        return image;
-    }//test d'image*/
 
     public int getX(){return x;}
     public int getY(){return y;}
@@ -121,4 +117,9 @@ public class Unite extends Sprite {
     }
 
     public int getPrix(){return prix;}
+
+    public String getTextEtat(int etat){
+        String text = Integer.toString(etat);
+        return text;
+    }
 }
