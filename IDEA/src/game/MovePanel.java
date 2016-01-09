@@ -18,10 +18,10 @@ public class MovePanel extends JPanel{
 
         setLayout(null); // on supprime le layout manager
 
-        //ComponentMove listener = new ComponentMove(this);
+        ComponentMove listener = new ComponentMove(this);
         add(createRenderPan());
-        //addMouseListener(listener);
-        //addMouseMotionListener(listener);
+        addMouseListener(listener);
+        addMouseMotionListener(listener);
 
     }
 
@@ -32,7 +32,7 @@ public class MovePanel extends JPanel{
         return renderPanel;
     }
 
-    /*private static class ComponentMove extends MouseAdapter {
+    private static class ComponentMove extends MouseAdapter {
 
         private int relx;
         private JComponent component;
@@ -77,5 +77,5 @@ public class MovePanel extends JPanel{
                 component.setLocation(e.getX() - relx, e.getY() - rely);
             }
         }
-    }*/
+    }
 }
