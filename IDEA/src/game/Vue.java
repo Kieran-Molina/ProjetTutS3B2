@@ -43,9 +43,9 @@ public class Vue extends JFrame{
         for(Unite unit : model.ennemis){model.movePanel.ajouterComposant(unit);}
 
         model.movePanel.repaint();
-        bar.add(new JButton("fonction 1"));
-        bar.add(new JButton("fonction 2"));
-        bar.add(new JButton("fonction 3"));
+        bar.add(new JButton("Se déplacer"));
+        bar.add(new JButton("Attaquer"));
+        bar.add(new JButton("Fin de tour"));
         tout.add(model.movePanel, BorderLayout.CENTER);
         tout.add(bar, BorderLayout.PAGE_END);
         setContentPane(tout);
