@@ -36,18 +36,18 @@ public class Model {
         ennemis = new ArrayList<Unite>();
 
         ennemis.add(new R17(300,500,false));
-        ennemis.add(new Infanterie(500,600,false));
-        ennemis.add(new Grenadier(200,200,false));
 
 
         ville = new ArrayList<Batiment>();
 
         ville.add(new QG(300,4400));
         ville.add(new QG(4100,100));
+        ville.add(new QG(900,100));
         ville.add(new BFormation(900,4100));
         ville.add(new BFormation(3200,100));
+        ville.add(new BFormation(500,500));
 
-        c=new Cursor(100,100);
+        //c=new Cursor(100,100);
 
         ///// IMAGES /////
         map = new ImageIcon("IDEA/Images/Tactical/Map/MapVierge.png").getImage();
