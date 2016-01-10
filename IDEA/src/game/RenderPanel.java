@@ -40,44 +40,45 @@ public class RenderPanel extends JPanel implements ActionListener {
     }
 
     protected void paintComponent(Graphics g){
-
+        Font font = new Font("Verdana", Font.BOLD, 30);//police pour l'affichage de l'état
+        g.setFont(font);
+        g.setColor(Color.white);//couleur biensur
         super.paintComponent(g);
         //fond map
         g.drawImage(model.getMap(),0,0,this);
 
-        for (Batiment city: model.ville) {
-            //batimment
-            g.drawImage(model.qg.getImage(), model.qg.getX(), model.qg.getY(), this);//QG
-            g.drawImage(model.ecole.getImage(), model.ecole.getX(), model.ecole.getY(), this);//QG
-            //g.drawImage(model.ville.getImage(),model.ville.getX(),model.ville.getY,this);
-            g.drawImage(model.city.getImage(), city.getX(), city.getY(), this);
+
+        for (Batiment bat : model.ville) {
+            //batiment
+            g.drawImage(bat.getImage(),bat.getX(),bat.getY(),this);
         }
 
         //Unités
-        for (Unite uni : model.units) {
-             g.drawImage(uni.getImageIcon().getImage(),uni.getX()*100,uni.getY()*100,this);
-            //vehicule
-            //  g.drawImage(R17.getImageIcon().getImage(),uni.getX()*100,uni.getY()*100,this);
-            g.drawImage(model.tutur.getImage(), model.tutur.getX(), model.tutur.getY(), this);
-            g.drawImage(model.armee.getImage(), model.tutur.getX(), model.tutur.getY(), this);
-            g.drawImage(model.b.getImage(), model.b.getX(), model.b.getY(), this);
-            g.drawImage(model.inf.getImage(), model.inf.getX(), model.inf.getY(), this);
+        for (Unite unit : model.units) {//ami
+            g.drawImage(unit.getImage(),unit.getX(),unit.getY(),this);
+
+        }
+
+        for (Unite ennemi : model.ennemis) {//ennemi
+            g.drawImage(ennemi.getImage(),ennemi.getX(),ennemi.getY(),this);
+
         }
 
             //curseur
-            g.drawImage(model.c.getImage(), model.c.getCurseX(), model.c.getCurseY(), this);//curseur
-
+            g.drawImage(model.c.getImage(), model.c.getX(), model.c.getY(), this);//curseur
 
     }
 
     public void actionPerformed(ActionEvent e) {
 
         model.c.move();
-        model.tutur.move();
-        model.inf.move();
-        model.b.move();
-        model.city.addBat();//
-        model.city.getVille();//it doesn't work
+
+        for(Unite unit :model.units){
+            unit.move();
+        }
+        /*for(Unite ennemi :model.ennemis){
+            ennemi.move();
+        }*/
         repaint();
     }
 
@@ -86,17 +87,11 @@ public class RenderPanel extends JPanel implements ActionListener {
         @Override
         public void keyReleased(KeyEvent e) {
             model.c.keyReleased(e);
-            model.tutur.keyReleased(e);
-            model.b.keyReleased(e);
-            model.inf.keyReleased(e);
         }
 
         @Override
         public void keyPressed(KeyEvent e) {
             model.c.keyPressed(e);
-            model.tutur.keyPressed(e);
-            model.b.keyPressed(e);
-            model.inf.keyReleased(e);
         }
     }
 }

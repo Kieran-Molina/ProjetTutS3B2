@@ -6,12 +6,23 @@ import javax.swing.*;
  * Created by nico on 04/01/16.
  */
 public class BFormation extends Batiment {
+    protected boolean isSelect;
+
 
     public BFormation(int lx,int ly) {
         super(lx,ly);
-        ImageIcon ii = new ImageIcon("IDEA/Images/Tactical/Batiment/BatimentFormation.png");
-        image = ii.getImage();
+        isSelect=false;
+        loadImage("IDEA/Images/Tactical/Batiment/BatimentFormation.png");
+        getImageDimensions();
 
+    }
+
+    public boolean getSelect(){return isSelect;}
+
+    public void setSelect(){
+        if(isSelect==true){
+            isSelect=false;
+        }else{isSelect=true;}
     }
 }
 

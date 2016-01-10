@@ -6,7 +6,7 @@ import java.awt.*;
 /**
  * Created by nico on 05/01/16.
  */
-public class Sprite {
+public class Sprite extends JPanel{
     protected int x;
     protected int y;
     protected int width;
@@ -18,7 +18,11 @@ public class Sprite {
 
         this.x = x;
         this.y = y;
+        width = 100; height = 100;
         vis = true;
+        setOpaque(false);
+        setSize(100,100);
+        setEnabled(false);
     }
 
     protected void getImageDimensions() {
@@ -41,9 +45,10 @@ public class Sprite {
         return x;
     }
 
-    public int getY() {
-        return y;
-    }
+    public int getY() {return y;}
+
+    public void setX(int dx){x=dx;}
+    public void setY(int dy){y=dy;}
 
     public boolean isVisible() {
         return vis;
@@ -54,6 +59,6 @@ public class Sprite {
     }
 
     public Rectangle getBounds() {//sert a la detection des sprites
-        return new Rectangle(x, y, width, height);
+        return new Rectangle(x, y, 100, 100);
     }
 }

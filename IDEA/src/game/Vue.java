@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
+import java.io.File;
+import java.util.ArrayList;
 
 /**
  * Created by Kiéran on 15/10/2015.
@@ -36,6 +38,10 @@ public class Vue extends JFrame{
     private void creerVueJeu() {
         JPanel tout = new JPanel(new BorderLayout());
         JPanel bar = new JPanel();
+
+        for(Unite unit : model.units){model.movePanel.ajouterComposant(unit);}
+        for(Unite unit : model.ennemis){model.movePanel.ajouterComposant(unit);}
+
         model.movePanel.repaint();
         bar.add(new JButton("fonction 1"));
         bar.add(new JButton("fonction 2"));

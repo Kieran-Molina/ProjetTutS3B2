@@ -1,0 +1,46 @@
+Ligne 0 : de 20 à 32 
+Ligne 1 : de 20 à 31
+Ligne 2 : de 4 à 14 // de 20 à 31
+Ligne 3 : de 3 à 14 // de 20 à 28
+Ligne 4 : de 2 à 14 // de 22 à 28
+Ligne 5 : de 1 à 14 // de 22 à 28
+Ligne 6 : de 0 à 14 // de 24 à 28
+Ligne 7 : de 0 à 14 // de 24 à 25 // 32 // de 35 à 38
+Ligne 8 : 10 // de 35 à 38
+Ligne 9 : de 30 à 38
+Ligne 10 : de 10 à 15 // de 34 à 38
+Ligne 11 : de 9 à 15 // de 35 à 36
+Ligne 12 : de 9 à 15 
+Ligne 13 : de 12 à 14 // de 27 à 30
+Ligne 14 : de 13 à 14 // de 27 à 30
+Ligne 15 : de 28 à 30
+Ligne 16 : de 27 à 30
+Ligne 17 : de 28 à 34
+Ligne 18 : de 28 à 34
+Ligne 19 : de 29 à 34  
+Ligne 20 : de 30 à 33
+Ligne 21 : 31
+Ligne 22 : de 38 à 40
+Ligne 23 : de 38 à 42
+Ligne 24 : de 32 à 42
+Ligne 25 : de 32 à 42
+Ligne 26 : de 32 à 43
+Ligne 27 : de 12 à 14 // de 26 à 28 // de 39 à 42
+Ligne 28 : de 10 à 15 // de 24 à 29 // de 39 à 43
+Ligne 29 : de 10 à 17 // de 24 à 29 // de 41 à 44
+Ligne 30 : de 10 à 19 // de 26 à 29 // de 42 à 45
+Ligne 31 : de 10 à 17 // de 28 à 29 // de 43 à 44
+Ligne 32 : de 7 à 17 // de 44 à 45
+Ligne 33 : de 6 à 14 // de 16 à 19 // 24 // 44 à 45
+Ligne 34 : de 8 à 19 // de 23 à 24 // 44
+Ligne 35 : de 9 à 15 // de 22 à 26 // de 44 à 45
+Ligne 36 : de 8 à 13 // de 21 à 27 // de 43 à 45
+Ligne 37 : de 7 à 13 // de 20 à 27 // de 42 à 45
+Ligne 38 : de 20 à 28 // de 36 à 42
+Ligne 39 : de 20 à 30 // de 36 à 42
+Ligne 40 : de 6 à 9 // 25 // de 27 à 29 // de 37 à 43
+Ligne 41 : de 5 à 10 // de 38 à 43
+Ligne 42 : de 5 à 11 // de 39 à 42
+Ligne 43 : de 5 à 11 // de 39 à 40
+Ligne 44 : de 7 à 11
+Ligne 45 : de 8 à 12

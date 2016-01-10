@@ -7,10 +7,11 @@ import java.awt.event.*;
 /**
  * Created by Kiéran on 15/10/2015.
  */
-public class MovePanel extends JPanel{
+public class MovePanel extends JLayeredPane{
     protected Model model;
     protected Vue vue;
     public RenderPanel renderPanel;
+    public ComponentMove listener;
 
     public MovePanel(Model m,Vue v) {
         model = m;
@@ -18,10 +19,10 @@ public class MovePanel extends JPanel{
 
         setLayout(null); // on supprime le layout manager
 
-        //ComponentMove listener = new ComponentMove(this);
+        ComponentMove listener = new ComponentMove(this);
         add(createRenderPan());
-        //addMouseListener(listener);
-        //addMouseMotionListener(listener);
+        addMouseListener(listener);
+        addMouseMotionListener(listener);
 
     }
 
@@ -32,7 +33,17 @@ public class MovePanel extends JPanel{
         return renderPanel;
     }
 
-    /*private static class ComponentMove extends MouseAdapter {
+    public void ajouterComposant(Unite unit){
+
+        remove(renderPanel);
+        unit.setLocation(unit.x, unit.y);
+        unit.setSize(new Dimension(100, 100));
+        add(unit);
+        add(renderPanel);
+
+    }
+
+    private static class ComponentMove extends MouseAdapter {
 
         private int relx;
         private JComponent component;
@@ -64,7 +75,7 @@ public class MovePanel extends JPanel{
         private JComponent getComponent(int x, int y) { //-------------- a simplifier
             // on recherche le composant aux coordonnées de la souris
             for (Component component : container.getComponents()) {
-                if (component instanceof JComponent && component.getBounds().contains(x, y)) {
+                if (component.getBounds().contains(x, y)) {
                     return (JComponent) component;
                 }
             }
@@ -74,8 +85,21 @@ public class MovePanel extends JPanel{
         @Override
         public void mouseDragged(MouseEvent e) {
             if (component != null) {
+                if (component instanceof RenderPanel){
+                    for (Component cmp : container.getComponents()){
+                        if (cmp instanceof Unite){
+                            //cmp.setLocation(e.getX() - relx -cmp.getX(), e.getY() - rely -cmp.getY());
+                            ((Unite) cmp).setX(2*(e.getX() - relx)-cmp.getX());
+                            ((Unite) cmp).setY(2*(e.getY() - rely)-cmp.getY());
+                        }
+                    }
+                }
                 component.setLocation(e.getX() - relx, e.getY() - rely);
+                if (component instanceof Unite){
+                    ((Unite) component).setX(e.getX() - relx);
+                    ((Unite) component).setY(e.getY() - rely);
+                }
             }
         }
-    }*/
+    }
 }
