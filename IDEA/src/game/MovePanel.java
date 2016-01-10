@@ -61,7 +61,6 @@ public class MovePanel extends JLayeredPane{
                 relx = e.getX() - component.getX(); // on mémorise la position relative
                 rely = e.getY() - component.getY();
                 component.setBorder(BorderFactory.createLineBorder(Color.RED)); // sélectionné -> bordure
-                System.out.println("clic");
             }
         }
 
@@ -86,6 +85,15 @@ public class MovePanel extends JLayeredPane{
         @Override
         public void mouseDragged(MouseEvent e) {
             if (component != null) {
+                if (component instanceof RenderPanel){
+                    for (Component cmp : container.getComponents()){
+                        if (cmp instanceof Unite){
+                            //cmp.setLocation(e.getX() - relx -cmp.getX(), e.getY() - rely -cmp.getY());
+                            ((Unite) cmp).setX(2*(e.getX() - relx)-cmp.getX());
+                            ((Unite) cmp).setY(2*(e.getY() - rely)-cmp.getY());
+                        }
+                    }
+                }
                 component.setLocation(e.getX() - relx, e.getY() - rely);
                 if (component instanceof Unite){
                     ((Unite) component).setX(e.getX() - relx);
