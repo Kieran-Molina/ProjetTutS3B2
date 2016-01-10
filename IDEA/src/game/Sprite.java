@@ -20,7 +20,7 @@ public class Sprite extends JPanel{
         this.y = y;
         width = 100; height = 100;
         vis = true;
-        //setOpaque(false);
+        setOpaque(false);
         setSize(100,100);
         setEnabled(false);
     }
