@@ -57,17 +57,19 @@ public class Unite extends Sprite {
         etat-=degats;
     }
 
-    public static ImageIcon getImageIcon(){
-        switch (direction){
+    protected void paintComponent(Graphics g){
+        super.paintComponent(g);
+        /*switch (direction){
             case UP:
-                return img_UP;
+                g.drawImage(img_UP.getImage(),x,y,this);
             case DOWN:
-                return img_DOWN;
+                g.drawImage(img_DOWN.getImage(),x,y,this);
             case LEFT:
-                return img_LEFT;
+                g.drawImage(img_LEFT.getImage(),x,y,this);
             default:
-                return img_RIGHT;
-        }
+                g.drawImage(img_RIGHT.getImage(),x,y,this);
+        }*/
+        g.drawImage(getImage(),x,y,null);
     }
 
     public boolean getSelect(){return isSelect;}

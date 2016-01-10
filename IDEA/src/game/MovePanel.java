@@ -7,10 +7,11 @@ import java.awt.event.*;
 /**
  * Created by Kiéran on 15/10/2015.
  */
-public class MovePanel extends JPanel{
+public class MovePanel extends JLayeredPane{
     protected Model model;
     protected Vue vue;
     public RenderPanel renderPanel;
+    public ComponentMove listener;
 
     public MovePanel(Model m,Vue v) {
         model = m;
@@ -32,6 +33,16 @@ public class MovePanel extends JPanel{
         return renderPanel;
     }
 
+    public void ajouterComposant(Unite unit){
+
+        remove(renderPanel);
+        unit.setLocation(unit.x, unit.y);
+        unit.setSize(new Dimension(100, 100));
+        add(unit);
+        add(renderPanel);
+
+    }
+
     private static class ComponentMove extends MouseAdapter {
 
         private int relx;
@@ -50,6 +61,7 @@ public class MovePanel extends JPanel{
                 relx = e.getX() - component.getX(); // on mémorise la position relative
                 rely = e.getY() - component.getY();
                 component.setBorder(BorderFactory.createLineBorder(Color.RED)); // sélectionné -> bordure
+                System.out.println("clic");
             }
         }
 
@@ -64,7 +76,7 @@ public class MovePanel extends JPanel{
         private JComponent getComponent(int x, int y) { //-------------- a simplifier
             // on recherche le composant aux coordonnées de la souris
             for (Component component : container.getComponents()) {
-                if (component instanceof JComponent && component.getBounds().contains(x, y)) {
+                if (component.getBounds().contains(x, y)) {
                     return (JComponent) component;
                 }
             }
@@ -75,6 +87,10 @@ public class MovePanel extends JPanel{
         public void mouseDragged(MouseEvent e) {
             if (component != null) {
                 component.setLocation(e.getX() - relx, e.getY() - rely);
+                if (component instanceof Unite){
+                    ((Unite) component).setX(e.getX() - relx);
+                    ((Unite) component).setY(e.getY() - rely);
+                }
             }
         }
     }

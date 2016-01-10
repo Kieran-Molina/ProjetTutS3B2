@@ -29,24 +29,23 @@ public class Model {
 
         units.add(new R17(300,100,true));
         units.add(new British(500,200,true));
-        units.add(new Infanterie(500,200,true));
+        units.add(new Infanterie(500,300,true));
         units.add(new Grenadier(100,100,true));
 
 
         ennemis = new ArrayList<Unite>();
 
-        ennemis.add(new R17(300,100,false));
+        ennemis.add(new R17(300,500,false));
         ennemis.add(new Infanterie(500,600,false));
-        ennemis.add(new AllemandLeger(700,700,false));
-        ennemis.add(new AllemandLourd(200,100,false));
-        ennemis.add(new Grenadier(200,100,false));
+        ennemis.add(new Grenadier(200,200,false));
 
 
         ville = new ArrayList<Batiment>();
 
         ville.add(new QG(300,4400));
         ville.add(new QG(4100,100));
-        ville.add(new BFormation(700,200));
+        ville.add(new BFormation(900,4100));
+        ville.add(new BFormation(3200,100));
 
         c=new Cursor(100,100);
 
@@ -64,9 +63,11 @@ public class Model {
     public void creerUneUnite(Unite aCreer){
         if(aCreer.getSide()) {
             units.add(aCreer);
+
         }else{
             ennemis.add(aCreer);
         }
+        movePanel.ajouterComposant(aCreer);
     }
 
     public void attaquer(Unite attaque,Unite defense){
