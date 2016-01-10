@@ -65,13 +65,13 @@ public class RenderPanel extends JPanel implements ActionListener {
         }
 
             //curseur
-            g.drawImage(model.c.getImage(), model.c.getX(), model.c.getY(), this);//curseur
+            //g.drawImage(model.c.getImage(), model.c.getX(), model.c.getY(), this);//curseur
 
     }
 
     public void actionPerformed(ActionEvent e) {
 
-        model.c.move();
+        //model.c.move();
 
         for(Unite unit :model.units){
             unit.move();
@@ -86,12 +86,12 @@ public class RenderPanel extends JPanel implements ActionListener {
 
         @Override
         public void keyReleased(KeyEvent e) {
-            model.c.keyReleased(e);
+            //model.c.keyReleased(e);
         }
 
         @Override
         public void keyPressed(KeyEvent e) {
-            model.c.keyPressed(e);
+            //model.c.keyPressed(e);
         }
     }
 }
