@@ -68,9 +68,9 @@ public class MovePanel extends JLayeredPane{
         public void mouseReleased(MouseEvent e){
             if (component != null) {
                 if (component instanceof Unite){
-                    component.setLocation(component.getX() - (component.getX()+50)%100, component.getY() - (component.getY()+50)%100);
-                    ((Unite) component).setX(component.getX() - (component.getX()+50)%100);
-                    ((Unite) component).setY(component.getY() - (component.getY()+50)%100);
+                    component.setLocation(component.getX() - (component.getX())%100, component.getY() - (component.getY())%100);
+                    ((Unite) component).setX(component.getX() - (component.getX())%100);
+                    ((Unite) component).setY(component.getY() - (component.getY())%100);
                 }
                 component.setBorder(null);
                 component = null;
