@@ -55,13 +55,18 @@ public class RenderPanel extends JPanel implements ActionListener {
 
         //Unités
         for (Unite unit : model.units) {//ami
-            g.drawImage(unit.getImage(),unit.getX(),unit.getY(),this);
+            g.drawImage(unit.getImage(),unit.getX()-getX(),unit.getY()-getY(),this);
+            //test
+            g.drawRect(unit.getX()-getX(),unit.getY()-getY(),100,100);
+            g.drawString("alli",unit.getX()-getX()+10,unit.getY()-getY()+40);
 
         }
 
         for (Unite ennemi : model.ennemis) {//ennemi
-            g.drawImage(ennemi.getImage(),ennemi.getX(),ennemi.getY(),this);
-
+            g.drawImage(ennemi.getImage(),ennemi.getX()-getX(),ennemi.getY()-getY(),this);
+            //test
+            g.drawRect(ennemi.getX()-getX(),ennemi.getY()-getY(),100,100);
+            g.drawString("enn",ennemi.getX()-getX()+10,ennemi.getY()-getY()+40);
         }
 
             //curseur
