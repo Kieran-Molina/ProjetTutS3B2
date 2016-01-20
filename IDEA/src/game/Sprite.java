@@ -13,6 +13,7 @@ public class Sprite extends JPanel{
     protected int height;
     protected boolean vis;
     protected Image image;
+    public int relx,rely; // deplacement
 
     public Sprite(int x, int y) {
 
@@ -20,7 +21,7 @@ public class Sprite extends JPanel{
         this.y = y;
         width = 100; height = 100;
         vis = true;
-        setOpaque(false);
+        //setOpaque(false);
         setSize(100,100);
         setEnabled(false);
     }

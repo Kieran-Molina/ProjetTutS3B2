@@ -36,7 +36,7 @@ public class MovePanel extends JLayeredPane{
     public void ajouterComposant(Unite unit){
 
         remove(renderPanel);
-        unit.setLocation(unit.x, unit.y);
+        unit.setLocation(unit.x + renderPanel.getLocation().x, unit.y + renderPanel.getLocation().y);
         unit.setSize(new Dimension(100, 100));
         add(unit);
         add(renderPanel);
@@ -49,6 +49,7 @@ public class MovePanel extends JLayeredPane{
         private JComponent component;
         private int rely;
         private Container container;
+        private int rpx = 0, rpy = 0;
 
         public ComponentMove(Container container) {
             this.container = container;
@@ -60,6 +61,17 @@ public class MovePanel extends JLayeredPane{
             if (component != null) {
                 relx = e.getX() - component.getX(); // on mémorise la position relative
                 rely = e.getY() - component.getY();
+
+                if (component instanceof RenderPanel){
+                    for (Component cmp : container.getComponents()){
+                        if (cmp != component){
+                            ((Unite)cmp).relx = e.getX() - ((Unite)cmp).getX();
+                            ((Unite)cmp).rely = e.getY() - ((Unite)cmp).getY();
+                        }
+
+                    }
+                }
+
                 component.setBorder(BorderFactory.createLineBorder(Color.RED)); // sélectionné -> bordure
             }
         }
@@ -68,9 +80,9 @@ public class MovePanel extends JLayeredPane{
         public void mouseReleased(MouseEvent e){
             if (component != null) {
                 if (component instanceof Unite){
-                    component.setLocation(component.getX() - (component.getX())%100, component.getY() - (component.getY())%100);
-                    ((Unite) component).setX(component.getX() - (component.getX())%100);
-                    ((Unite) component).setY(component.getY() - (component.getY())%100);
+                    component.setLocation(component.getX() - (component.getX())%100 + rpx%100, component.getY() - (component.getY())%100 + rpy%100);
+                    ((Unite) component).setX(component.getX() - (component.getX())%100 + rpx%100 );
+                    ((Unite) component).setY(component.getY() - (component.getY())%100 + rpy%100 );
                 }
                 component.setBorder(null);
                 component = null;
@@ -90,16 +102,20 @@ public class MovePanel extends JLayeredPane{
         @Override
         public void mouseDragged(MouseEvent e) {
             if (component != null) {
-                /*if (component instanceof RenderPanel){
-                    for (Component cmp : container.getComponents()){
-                        if (cmp instanceof Unite){
-                            //cmp.setLocation(e.getX() - relx -cmp.getX(), e.getY() - rely -cmp.getY());
-                            ((Unite) cmp).setX(2*(e.getX() - relx)-cmp.getX());
-                            ((Unite) cmp).setY(2*(e.getY() - rely)-cmp.getY());
-                        }
-                    }
-                }*/
                 component.setLocation(e.getX() - relx, e.getY() - rely);
+                if (component instanceof RenderPanel){
+                    rpx = component.getX();
+                    rpy = component.getY();
+                    for (Component cmp : container.getComponents()){
+                        if (cmp != component){
+                            cmp.setLocation(e.getX() - ((Unite) cmp).relx, e.getY() - ((Unite)cmp).rely);
+                            ((Unite)cmp).setX(e.getX() - ((Unite) cmp).relx);
+                            ((Unite)cmp).setY(e.getY() - ((Unite)cmp).rely);
+                        }
+
+                    }
+                }
+
                 if (component instanceof Unite){
                     ((Unite) component).setX(e.getX() - relx);
                     ((Unite) component).setY(e.getY() - rely);

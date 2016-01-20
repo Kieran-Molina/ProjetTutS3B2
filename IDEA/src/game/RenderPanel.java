@@ -17,7 +17,7 @@ public class RenderPanel extends JPanel implements ActionListener {
         super();
         model = m;
         vue = v;
-        setLayout(new GridLayout(50,50,0,0)); //PB
+        setLayout(null);
         addKeyListener( new TAdapter());
         setFocusable(true);
         timer = new Timer(model.DELAY, this);
