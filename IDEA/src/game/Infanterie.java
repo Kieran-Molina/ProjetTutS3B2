@@ -14,9 +14,9 @@ public class Infanterie extends Unite {
 
         super(posX, posY,ami);
         if(ami==true){
-            loadImage("IDEA/Images/Tactical/Unite/Infanterie/Normal/Déplacement_LEFT/Infanterie_Deplacement_11.png");}
+            loadImage("IDEA/Images/Tactical/Unite/Infanterie/soldier_face.png");}
 
-        else{loadImage("IDEA/Images/Tactical/Unite/InfanterieEnnemi/Normal/Déplacement_LEFT/InfanterieEnnemi_Deplacement_1.png");}
+        else{loadImage("IDEA/Images/Tactical/Unite/Infanterie/soldier_faceB.png");}
         getImageDimensions();
         force=(int)(25+random()*(50-25));
         prix=50;
