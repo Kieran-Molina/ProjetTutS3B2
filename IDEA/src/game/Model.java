@@ -16,7 +16,6 @@ public class Model {
     public ArrayList<Unite> ennemis;
     public ArrayList<Batiment> ville;
     public boolean arbres [][];
-    public Cursor c;
 
 
     protected int DELAY = 4;
@@ -47,7 +46,6 @@ public class Model {
         ville.add(new BFormation(3200,100));
         ville.add(new BFormation(500,500));
 
-        //c=new Cursor(100,100);
 
         ///// IMAGES /////
         map = new ImageIcon("IDEA/Images/Tactical/Map/MapVierge.png").getImage();

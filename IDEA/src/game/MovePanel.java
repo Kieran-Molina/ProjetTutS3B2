@@ -11,7 +11,6 @@ public class MovePanel extends JLayeredPane{
     protected Model model;
     protected Vue vue;
     public RenderPanel renderPanel;
-    public ComponentMove listener;
 
     public MovePanel(Model m,Vue v) {
         model = m;
@@ -80,13 +79,20 @@ public class MovePanel extends JLayeredPane{
         public void mouseReleased(MouseEvent e){
             if (component != null) {
                 if (component instanceof Unite){
-                    component.setLocation(e.getX() - (e.getX())%100 + rpx%100, e.getY() - (e.getY())%100 + rpy%100);
-                    ((Unite) component).setX(e.getX() - (e.getX())%100 + rpx%100 );
-                    ((Unite) component).setY(e.getY() - (e.getY())%100 + rpy%100 );
+                    ((Unite) component).setX((e.getX()-rpx%100) - (e.getX()-rpx%100)%100 + rpx%100 );
+                    ((Unite) component).setY((e.getY()-rpy%100) - (e.getY()-rpy%100)%100 + rpy%100 );
+
+                    //anti sortie
+                    if(component.getX()<rpx)((Unite) component).setX(rpx);
+                    if(component.getX()>rpx+4900) ((Unite) component).setX(rpx+4900);
+
+                    if(component.getY()<rpy)((Unite) component).setY(rpy);
+                    if(component.getY()>rpy+4900) ((Unite) component).setY(rpy+4900);
                 }
                 component.setBorder(null);
                 component = null;
             }
+            container.repaint();
         }
 
         private JComponent getComponent(int x, int y) { //-------------- a simplifier
@@ -118,8 +124,16 @@ public class MovePanel extends JLayeredPane{
                 if (component instanceof Unite){
                     ((Unite) component).setX(e.getX() - relx);
                     ((Unite) component).setY(e.getY() - rely);
+
+                    //anti sortie
+                    if(component.getX()<rpx)((Unite) component).setX(rpx);
+                    if(component.getX()>rpx+4900) ((Unite) component).setX(rpx+4900);
+
+                    if(component.getY()<rpy)((Unite) component).setY(rpy);
+                    if(component.getY()>rpy+4900) ((Unite) component).setY(rpy + 4900);
                 }
             }
+            container.repaint();
         }
     }
 }

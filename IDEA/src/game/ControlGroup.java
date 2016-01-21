@@ -13,7 +13,7 @@ public class ControlGroup {
 
     public ControlGroup(Model m) {
         model = m;
-        vue = new Vue(model,vue);
+        vue = new Vue(model);
 
         cb = new ControlButton(model, vue);
         cm = new ControlMenu(model, vue);

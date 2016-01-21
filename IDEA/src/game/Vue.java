@@ -13,12 +13,10 @@ import java.util.ArrayList;
 public class Vue extends JFrame{
     public Dimension dimension;
     protected Model model;
-    protected Vue vue;
 
 
-    public Vue(Model m,Vue v){
+    public Vue(Model m){
         model = m;
-        vue = v;
         dimension = Toolkit.getDefaultToolkit().getScreenSize();
 
         initAttribut();
@@ -52,7 +50,7 @@ public class Vue extends JFrame{
     }
 
     private void initAttribut() {
-        model.movePanel = new MovePanel(model,vue);
+        model.movePanel = new MovePanel(model,this);
     }
 
     public void setControlButton(ActionListener listener) {
