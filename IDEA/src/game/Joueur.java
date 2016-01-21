@@ -45,11 +45,10 @@ public class Joueur {
     public int getArgent(){
         return Argent;
     }
+
     public void setARgent(int somme){
         Argent=Argent+somme;
     }
-
-
 
 
 

@@ -14,8 +14,8 @@ public class R17 extends Unite {
 
         super(posX, posY, ami);
         if(ami==true){
-            loadImage("IDEA/Images/Tactical/Unite/Renault_FT17/Normal/Déplacement_LEFT/Renault_FT_17_Deplacement_11.png");}//if pour savoir que sprite selon l'armée
-        else{loadImage("IDEA/Images/Tactical/Unite/Renault_FT17/Normal/Déplacement_RIGHT/Renault_FT_17_Deplacement_11.png");}
+            loadImage("IDEA/Images/Tactical/Unite/TankL/TanklL.png");}//if pour savoir que sprite selon l'armée
+        else{loadImage("IDEA/Images/Tactical/Unite/TankL/E-TanklL.png");}
         getImageDimensions();
         force=(int)(125+random()*(125-80));
         prix=500;
