@@ -13,6 +13,9 @@ public class Moto extends Unite {
         loadImage("IDEA/Images/Tactical/Unite/Moto/Normal/Déplacement_LEFT/Moto_Deplacement_11.png");
         getImageDimensions();
         force = (int) (25 + random() * (50 - 25));
-        prix = 100;
+        prix = 1000;
+        munition=null;
+        deplacement=8;
+        defense=2;
     }
 }

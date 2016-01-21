@@ -12,10 +12,14 @@ public class Unite extends Sprite {
     //public int x, y;
     protected int etat;//jauge d'énergie
     protected boolean isSelect;//savoir si il est selectionner avec le curseur
-    final static int DEPLACEMENT_MAX=250;//nombre de case de deplacement
+    //final static int DEPLACEMENT_MAX=250;//nombre de case de deplacement
     protected boolean side;//ami= true ;enemie=false
+    protected int deplacement;
     protected int force;//les degat que fait une unite
     protected int prix;//ce que coute une unité
+    protected int munition;//nul si munitions infinis
+    protected int dx;//dir de depl
+    protected int dy;//pareil
 
 
     //--- CONSTANTES ---//
@@ -30,7 +34,16 @@ public class Unite extends Sprite {
         direction = RIGHT;
         isSelect=false;
         etat=10;
-        side = ami;
+    }
+
+    public void deplaceUnite(int depX, int depY){
+        if(isSelect){
+        if (depX + depY > DEPLACEMENT_MAX){
+            System.out.println("deplacement trop grand : "+(depX+depY)+" max : "+DEPLACEMENT_MAX);
+            return;
+        }
+        x+=depX;
+        y+=depY;}
     }
 
     public boolean isDead(){
@@ -65,6 +78,52 @@ public class Unite extends Sprite {
     public void trueSelect(){isSelect=true;}
     public void falseSelect(){isSelect=false;}
 
+    public void move() {
+        x += dx;
+        y += dy;
+
+        if (x < 1) {
+            x = 1;
+        }
+
+        if (y < 1) {
+            y = 1;
+        }
+
+        if (x > 4900) {
+            x =4900;
+        }
+
+        if (y >4900) {
+            y = 4900;
+        }
+    }
+   /* public void keyPressed(KeyEvent e) {
+
+        int key = e.getKeyCode();
+
+        if (key == KeyEvent.VK_LEFT) {dx = -1;}
+
+        if (key == KeyEvent.VK_RIGHT) {dx = 1;}
+
+        if (key == KeyEvent.VK_UP) {dy = -1;}
+
+        if (key == KeyEvent.VK_DOWN) {dy = 1;}
+
+    }
+
+    public void keyReleased(KeyEvent e) {
+
+        int key = e.getKeyCode();
+
+        if (key == KeyEvent.VK_LEFT) {dx = 0;}
+
+        if (key == KeyEvent.VK_RIGHT) {dx = 0;}
+
+        if (key == KeyEvent.VK_UP) {dy = 0;}
+
+        if (key == KeyEvent.VK_DOWN) {dy = 0;}
+    }*/
 
     public int getForce(){return force;}
 

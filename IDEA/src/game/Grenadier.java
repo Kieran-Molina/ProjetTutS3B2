@@ -16,7 +16,10 @@ public class Grenadier extends Unite {
         else{loadImage("IDEA/Images/Tactical/Unite/GrenadierEnnemi/Normal/Déplacement_LEFT/GrenadierEnnemi_Deplacement_1.png");}
         getImageDimensions();
         force=(int)(50+random()*(80-50));
-        prix=75;
+        prix=300;
+        munition=3;
+        deplacement=2;
+        defense=2;
 
     }
 
