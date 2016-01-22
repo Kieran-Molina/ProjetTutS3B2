@@ -21,7 +21,6 @@ public class R17 extends Unite {
         prix=1000;
         munition=9;
         deplacement=6;
-        defense=4;
     }
 
 

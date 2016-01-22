@@ -20,9 +20,8 @@ public class Infanterie extends Unite {
         getImageDimensions();
         force=(int)(25+random()*(50-25));
         prix=100;
-        munition=null;
+        munition=100;
         deplacement=3;
-        defense=2;
     }
 
 

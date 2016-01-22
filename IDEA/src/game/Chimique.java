@@ -16,6 +16,5 @@ public class Chimique extends Unite {
         prix = 400;
         munition=3;
         deplacement=2;
-        defense=2;
     }
 }

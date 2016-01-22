@@ -19,7 +19,6 @@ public class British extends Unite {
         prix=4000;
         munition=8;
         deplacement=5;
-        defense=6;
     }
 
 }

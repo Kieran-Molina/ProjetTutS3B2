@@ -19,7 +19,6 @@ public class Grenadier extends Unite {
         prix=300;
         munition=3;
         deplacement=2;
-        defense=2;
 
     }
 

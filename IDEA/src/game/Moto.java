@@ -14,8 +14,7 @@ public class Moto extends Unite {
         getImageDimensions();
         force = (int) (25 + random() * (50 - 25));
         prix = 1000;
-        munition=null;
+        munition=100;
         deplacement=8;
-        defense=2;
     }
 }
