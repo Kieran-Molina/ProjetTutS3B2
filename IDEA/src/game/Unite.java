@@ -59,7 +59,6 @@ public class Unite extends Sprite {
                 &&this.getX()-100==u.getX()
                 &&this.getY()+100==u.getY()
                 &&this.getY()-100==u.getY()){
-
                     u.prendDegats(this.getForce());
 
             }
