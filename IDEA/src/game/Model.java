@@ -19,7 +19,7 @@ public class Model {
     protected int DELAY = 4;
 
     ///// IMAGES /////
-    protected Image map;
+    protected Image map, grille;
 
     public Model(){
         units = new ArrayList<Unite>();
@@ -47,10 +47,12 @@ public class Model {
 
         ///// IMAGES /////
         map = new ImageIcon("IDEA/Images/Tactical/Map/MapVierge.png").getImage();
+        grille = new ImageIcon("IDEA/Images/Tactical/Map/Cadrillage.png").getImage();
 
     }
 
     public Image getMap(){ return map; }
+    public Image getGrille(){ return grille; }
 
     public int getDELAY(){return DELAY;}
     public void setDELAYUp(){DELAY=DELAY-1;}//augmenter la vitesse

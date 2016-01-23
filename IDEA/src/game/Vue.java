@@ -51,8 +51,6 @@ public class Vue extends JFrame{
         bar.add(new JButton("Fin de tour"));
         tout.add(model.movePanel, BorderLayout.CENTER);
         tout.add(bar, BorderLayout.PAGE_END);
-        tout.setOpaque(true);
-        tout.setBackground(new Color(0,0,0,0));
         setContentPane(tout);
     }
 
