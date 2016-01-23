@@ -53,6 +53,19 @@ public class Unite extends Sprite {
         return false;
     }
 
+    public void attackUnit(Unite u){
+        if(this.side!=u.side){
+            if(this.getX()+100==u.getX()
+                &&this.getX()-100==u.getX()
+                &&this.getY()+100==u.getY()
+                &&this.getY()-100==u.getY()){
+
+                    u.prendDegats(this.getForce());
+
+            }
+        }
+    }
+
     public int getEtat(){return etat;}
 
     public void prendDegats(int degats){
