@@ -8,12 +8,12 @@ import static java.lang.Math.random;
 /**
  * Created by nico on 06/01/16.
  */
-public class British extends Unite {
+public class TankLeger extends Unite {
 
-    public British(int posX, int posY, boolean ami) {
+    public TankLeger(int posX, int posY, boolean ami) {
 
         super(posX, posY, ami);
-        loadImage("IDEA/Images/Tactical/Unite/British MK V/Normal/Déplacement_LEFT/British_Deplacement_11.png");
+        loadImage("IDEA/Images/Tactical/Unite/TankL/TanklL.png");
         getImageDimensions();
         force=(int)(150+random()*(150-125));
         prix=4000;

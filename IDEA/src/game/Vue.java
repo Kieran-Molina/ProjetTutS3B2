@@ -36,16 +36,23 @@ public class Vue extends JFrame{
     private void creerVueJeu() {
         JPanel tout = new JPanel(new BorderLayout());
         JPanel bar = new JPanel();
+        JPanel hub = new JPanel();
 
         for(Unite unit : model.units){model.movePanel.ajouterComposant(unit);}
         for(Unite unit : model.ennemis){model.movePanel.ajouterComposant(unit);}
 
         model.movePanel.repaint();
+        hub.add(new JLabel("Nombre unités"+ model.getListUnit()));
+        bar.setOpaque(true);
+        bar.setBackground(new Color(0,0,0,0));
         bar.add(new JButton("Se deplacer"));
         bar.add(new JButton("Attaquer"));
+        bar.add(new JButton("Attendre"));
         bar.add(new JButton("Fin de tour"));
         tout.add(model.movePanel, BorderLayout.CENTER);
         tout.add(bar, BorderLayout.PAGE_END);
+        tout.setOpaque(true);
+        tout.setBackground(new Color(0,0,0,0));
         setContentPane(tout);
     }
 

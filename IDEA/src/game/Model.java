@@ -2,8 +2,6 @@ package game;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -26,15 +24,15 @@ public class Model {
     public Model(){
         units = new ArrayList<Unite>();
 
-        units.add(new R17(300,100,true));
-        units.add(new British(500,200,true));
+        units.add(new TankLourd(300,100,true));
+        units.add(new TankLeger(500,200,true));
         units.add(new Infanterie(500,300,true));
         units.add(new Grenadier(100,100,true));
 
 
         ennemis = new ArrayList<Unite>();
 
-        ennemis.add(new R17(300,500,false));
+        ennemis.add(new TankLourd(300,500,false));
 
 
         ville = new ArrayList<Batiment>();
@@ -82,6 +80,9 @@ public class Model {
             }
         }
     }
+
+    public int getListUnit(){ int i=(Integer)units.size();
+    return i;}
 
     public boolean isArbre(int x, int y) {
         return arbres[x][y];

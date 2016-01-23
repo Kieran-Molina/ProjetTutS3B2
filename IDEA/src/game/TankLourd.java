@@ -8,9 +8,9 @@ import static java.lang.Math.random;
 /**
  * Created by nico on 03/01/16.
  */
-public class R17 extends Unite {
+public class TankLourd extends Unite {
 
-    public R17(int posX, int posY, boolean ami) {
+    public TankLourd(int posX, int posY, boolean ami) {
 
         super(posX, posY, ami);
         if(ami==true){
