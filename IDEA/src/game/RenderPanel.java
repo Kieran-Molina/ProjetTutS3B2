@@ -41,6 +41,7 @@ public class RenderPanel extends JPanel{
         super.paintComponent(g);
         //fond map
         g.drawImage(model.getMap(), 0, 0, this);
+        g.drawImage(model.getGrille(), 0, 0, this);
 
 
         for (Batiment bat : model.ville) {
