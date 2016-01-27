@@ -9,6 +9,7 @@ import java.awt.*;
 public class Sprite extends JPanel{
     protected int x;
     protected int y;
+    protected int initX, initY; // position d'origine pour limite deplacement
     protected int width;
     protected int height;
     protected boolean vis;
@@ -19,6 +20,8 @@ public class Sprite extends JPanel{
 
         this.x = x;
         this.y = y;
+        initX = x;
+        initY = y;
         width = 100; height = 100;
         vis = true;
         setOpaque(false);

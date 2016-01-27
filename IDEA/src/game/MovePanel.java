@@ -88,6 +88,26 @@ public class MovePanel extends JLayeredPane{
 
                     if(component.getY()<rpy)((Unite) component).setY(rpy);
                     if(component.getY()>rpy+4900) ((Unite) component).setY(rpy+4900);
+
+                    //anti depassement
+                    if(Math.abs(component.getX()-(((Unite) component).initX)-rpx)
+                            + Math.abs(component.getY()-(((Unite) component).initY)-rpy)
+                        > 100*((Unite) component).getDeplacementMax()){
+
+                        ((Unite) component).setX(((Unite) component).initX + rpx);
+                        ((Unite) component).setY(((Unite) component).initY + rpy);
+                    }
+
+                    // anti superposition
+                    for (Component cmp : container.getComponents()){
+                        if (cmp instanceof Unite && cmp!=component){
+                            if (cmp.getX() == component.getX() && cmp.getY() == component.getY()) {
+                                ((Unite) component).setX(((Unite) component).initX + rpx);
+                                ((Unite) component).setY(((Unite) component).initY + rpy);
+                            }
+                        }
+
+                    }
                 }
                 component.setBorder(null);
                 component = null;

@@ -12,14 +12,12 @@ public class Unite extends Sprite {
     //public int x, y;
     protected int etat;//jauge d'énergie
     protected boolean isSelect;//savoir si il est selectionner avec le curseur
-    final static int DEPLACEMENT_MAX=250;//nombre de case de deplacement
+    final static int DEPLACEMENT_MAX=5;//nombre de case de deplacement
     protected boolean side;//ami= true ;enemie=false
     protected int deplacement;
     protected int force;//les degat que fait une unite
     protected int prix;//ce que coute une unité
     protected int munition;//nul si munitions infinis
-    protected int dx;//dir de depl
-    protected int dy;//pareil
 
 
     //--- CONSTANTES ---//
@@ -45,6 +43,8 @@ public class Unite extends Sprite {
         x+=depX;
         y+=depY;}
     }*/
+
+    public int getDeplacementMax(){return DEPLACEMENT_MAX;}
 
     public boolean isDead(){
         if(etat<=0){
