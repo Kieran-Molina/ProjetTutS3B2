@@ -9,7 +9,8 @@ import java.util.ArrayList;
  */
 public class Model {
     public MovePanel movePanel; // fond contenant la carte et tous les elements
-
+    public Joueur allie;
+    public Joueur ennemi;
     public ArrayList<Unite> units;
     public ArrayList<Unite> ennemis;
     public ArrayList<Batiment> ville;
@@ -44,6 +45,8 @@ public class Model {
         ville.add(new BFormation(3200,100));
         ville.add(new BFormation(500,500));
 
+        allie=new Joueur(0);
+        ennemi=new Joueur(0);
 
         ///// IMAGES /////
         map = new ImageIcon("IDEA/Images/Tactical/Map/MapVierge.png").getImage();
@@ -58,13 +61,8 @@ public class Model {
     public void setDELAYUp(){DELAY=DELAY-1;}//augmenter la vitesse
     public void setDELAYDown(){DELAY=DELAY+1;}//la baisse
 
-    public void creerUneUnite(Unite aCreer){
-        if(aCreer.getSide()) {
-            units.add(aCreer);
-
-        }else{
-            ennemis.add(aCreer);
-        }
+    public void creerUneUnite(Joueur joueur,Unite aCreer){
+        joueur.addUnite(aCreer);
         movePanel.ajouterComposant(aCreer);
     }
 

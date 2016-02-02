@@ -44,6 +44,7 @@ public class RenderPanel extends JPanel{
         g.drawImage(model.getGrille(), 0, 0, this);
 
 
+
         for (Batiment bat : model.ville) {
             //batiment
             g.drawImage(bat.getImage(), bat.getX(), bat.getY(), this);
@@ -64,6 +65,7 @@ public class RenderPanel extends JPanel{
             g.drawRect(ennemi.getX() - getX(), ennemi.getY() - getY(), 100, 100);
             g.drawString("enn", ennemi.getX() - getX() + 10, ennemi.getY() - getY() + 40);
         }
+        g.drawImage(model.getGrille(),1,1,this);
 
     }
 }

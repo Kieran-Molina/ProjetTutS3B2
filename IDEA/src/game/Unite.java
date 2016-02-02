@@ -36,8 +36,8 @@ public class Unite extends Sprite {
 
     /*public void deplaceUnite(int depX, int depY){
         if(isSelect){
-        if (depX + depY > DEPLACEMENT_MAX){
-            System.out.println("deplacement trop grand : "+(depX+depY)+" max : "+DEPLACEMENT_MAX);
+        if (depX + depY > deplacement){
+            System.out.println("deplacement trop grand : "+(depX+depY)+" max : "+deplacement);
             return;
         }
         x+=depX;

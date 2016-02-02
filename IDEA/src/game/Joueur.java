@@ -9,12 +9,12 @@ public class Joueur {
 
     protected ArrayList<Unite> armee;
     protected ArrayList<Batiment> bat;
-    protected int Argent;
+    protected int argent;
 
     public Joueur(int x){
         armee = new ArrayList<Unite>();
         bat = new ArrayList<Batiment>();
-        Argent = Argent+x;
+        argent = x;
     }
 
     public void videArme(){ armee.clear();}//vidage de la liste
@@ -43,13 +43,11 @@ public class Joueur {
     }
 
     public int getArgent(){
-        return Argent;
+        return argent;
     }
 
     public void setARgent(int somme){
-        Argent=Argent+somme;
+        argent=somme;
     }
-
-
 
 }
