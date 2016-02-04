@@ -27,7 +27,7 @@ public class MovePanel extends JLayeredPane{
 
     private JComponent createRenderPan() {
         renderPanel = new RenderPanel(model,vue); // création du jpanel contenant la map déplaçable
-        renderPanel.setLocation(0,0); // position de départ
+        renderPanel.setLocation(0,-4000); // position de départ
         renderPanel.setSize(model.getMap().getWidth(null), model.getMap().getHeight(null)); // taille de la map
         return renderPanel;
     }
@@ -35,11 +35,12 @@ public class MovePanel extends JLayeredPane{
     public void ajouterComposant(Unite unit){
 
         remove(renderPanel);
-        unit.setLocation(unit.x + renderPanel.getLocation().x, unit.y + renderPanel.getLocation().y);
+        unit.setX(unit.initX + renderPanel.getX());
+        unit.setY(unit.initY + renderPanel.getY());
         unit.setSize(new Dimension(100, 100));
         add(unit);
         add(renderPanel);
-
+        repaint();
     }
 
     private static class ComponentMove extends MouseAdapter {
@@ -48,7 +49,7 @@ public class MovePanel extends JLayeredPane{
         private JComponent component;
         private int rely;
         private Container container;
-        private int rpx = 0, rpy = 0;
+        private int rpx = 0, rpy = -4000; // position de départ du renderPanel
 
         public ComponentMove(Container container) {
             this.container = container;
@@ -109,13 +110,14 @@ public class MovePanel extends JLayeredPane{
 
                     }
                 }
+                System.out.println(component.getX()+" "+component.getY());
                 component.setBorder(null);
                 component = null;
             }
             container.repaint();
         }
 
-        private JComponent getComponent(int x, int y) { //-------------- a simplifier
+        private JComponent getComponent(int x, int y) {
             // on recherche le composant aux coordonnées de la souris
             for (Component component : container.getComponents()) {
                 if (component.getBounds().contains(x, y)) {

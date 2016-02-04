@@ -25,10 +25,8 @@ public class Model {
     public Model(){
         units = new ArrayList<Unite>();
 
-        units.add(new TankLourd(300,100,true));
-        units.add(new TankLeger(500,200,true));
-        units.add(new Infanterie(500,300,true));
-        units.add(new Grenadier(100,100,true));
+        units.add(new TankLeger(1400,4700,true));
+        units.add(new Infanterie(1300,4700,true));
 
 
         ennemis = new ArrayList<Unite>();
@@ -40,13 +38,11 @@ public class Model {
 
         ville.add(new QG(300,4400));
         ville.add(new QG(4100,100));
-        ville.add(new QG(900,100));
         ville.add(new BFormation(900,4100));
         ville.add(new BFormation(3200,100));
-        ville.add(new BFormation(500,500));
 
-        allie=new Joueur(0);
-        ennemi=new Joueur(0);
+        allie=new Joueur(15000);
+        ennemi=new Joueur(15000);
 
         ///// IMAGES /////
         map = new ImageIcon("IDEA/Images/Tactical/Map/MapVierge.png").getImage();

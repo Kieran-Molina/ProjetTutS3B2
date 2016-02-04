@@ -18,7 +18,7 @@ public class Infanterie extends Unite {
 
         else{loadImage("IDEA/Images/Tactical/Unite/InfanterieEnnemi/Normal/Déplacement_LEFT/InfanterieEnnemi_Deplacement_1.png");}
         getImageDimensions();
-        force=(int)(25+random()*(50-25));
+        force=(int)(35+random()*(15));
         prix=100;
         munition=100;
         deplacement=3;

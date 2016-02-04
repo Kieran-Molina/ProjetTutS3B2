@@ -37,11 +37,10 @@ public class RenderPanel extends JPanel{
     protected void paintComponent(Graphics g) {
         Font font = new Font("Verdana", Font.BOLD, 30);//police pour l'affichage de l'état
         g.setFont(font);
-        g.setColor(Color.white);//couleur biensur
+        g.setColor(Color.white);
         super.paintComponent(g);
         //fond map
         g.drawImage(model.getMap(), 0, 0, this);
-        g.drawImage(model.getGrille(), 0, 0, this);
 
 
 
@@ -65,7 +64,6 @@ public class RenderPanel extends JPanel{
             g.drawRect(ennemi.getX() - getX(), ennemi.getY() - getY(), 100, 100);
             g.drawString("enn", ennemi.getX() - getX() + 10, ennemi.getY() - getY() + 40);
         }
-        g.drawImage(model.getGrille(),1,1,this);
 
     }
 }

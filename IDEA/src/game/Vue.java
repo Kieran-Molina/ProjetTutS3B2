@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class Vue extends JFrame{
     public Dimension dimension;
     protected Model model;
+    protected JButton acheterTankLeger, acheterTankLourd, acheterChimique, acheterInfanterie, acheterGrenadier, acheterMoto;
 
 
     public Vue(Model m){
@@ -27,7 +28,7 @@ public class Vue extends JFrame{
         setLocation((dimension.width / 2) - (getWidth() / 2), (dimension.height / 2) - (getHeight() / 2));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(true);
-        setTitle("Projet Tut "); //--------------------- TITRE ?
+        setTitle("Projet Tut ");
 
         setVisible(true);
 
@@ -41,13 +42,34 @@ public class Vue extends JFrame{
         for(Unite unit : model.units){model.movePanel.ajouterComposant(unit);}
         for(Unite unit : model.ennemis){model.movePanel.ajouterComposant(unit);}
 
-        model.movePanel.repaint();
+        //model.movePanel.repaint();
         hub.add(new JLabel("Nombre unités"+ model.getListUnit()));
         bar.setOpaque(true);
         bar.setBackground(new Color(0,0,0,0));
-        bar.add(new JButton("Se deplacer"));
-        bar.add(new JButton("Attaquer"));
-        bar.add(new JButton("Attendre"));
+
+        // achats
+        acheterTankLeger = new JButton("Tank Leger");
+        acheterTankLourd = new JButton("Tank Lourd");
+        acheterChimique = new JButton("Unite Chimique");
+        acheterGrenadier = new JButton("Grenadier");
+        acheterInfanterie = new JButton("Infanterie");
+        acheterMoto = new JButton("Moto");
+
+        bar.add(new JLabel("Achat : "));
+        acheterInfanterie.setToolTipText("<HTML>Prix : 100 <br>Deplacement : 3 <br>force : 35/50</HTML>");
+        bar.add(acheterInfanterie);
+        acheterMoto.setToolTipText("<HTML>Prix : 1000 <br>Deplacement : 8 <br>force : 35/50</HTML>");
+        bar.add(acheterMoto);
+        acheterTankLeger.setToolTipText("<HTML>Prix : 4000 <br>Deplacement : 5 <br>force : 150/175</HTML>");
+        bar.add(acheterTankLeger);
+        acheterTankLourd.setToolTipText("<HTML>Prix : 6000 <br>Deplacement : 6 <br>force : 180/230</HTML>");
+        bar.add(acheterTankLourd);
+        acheterChimique.setToolTipText("<HTML>Prix : 1500 <br>Deplacement : 2 <br>force : 70/100</HTML>");
+        bar.add(acheterChimique);
+        acheterGrenadier.setToolTipText("<HTML>Prix : 300 <br>Deplacement : 2 <br>force : 50/80</HTML>");
+        bar.add(acheterGrenadier);
+
+        bar.add(new JLabel("Actions : "));
         bar.add(new JButton("Fin de tour"));
         tout.add(model.movePanel, BorderLayout.CENTER);
         tout.add(bar, BorderLayout.PAGE_END);
@@ -59,7 +81,12 @@ public class Vue extends JFrame{
     }
 
     public void setControlButton(ActionListener listener) {
-        // xxx.addActionListener(listener);
+        acheterTankLeger.addActionListener(listener);
+        acheterTankLourd.addActionListener(listener);
+        acheterInfanterie.addActionListener(listener);
+        acheterMoto.addActionListener(listener);
+        acheterGrenadier.addActionListener(listener);
+        acheterChimique.addActionListener(listener);
     }
 
     public void setControlMenu(ActionListener listener) {

@@ -12,8 +12,8 @@ public class Chimique extends Unite {
         super(posX, posY, ami);
         loadImage("IDEA/Images/Tactical/Unite/Chimique/Normal/Déplacement_LEFT/Chimique_Deplacement_11.png");
         getImageDimensions();
-        force = (int) (70 + random() * (100 - 70));
-        prix = 400;
+        force = (int) (70 + random() * (30));
+        prix = 1500;
         munition=3;
         deplacement=2;
     }

@@ -50,4 +50,14 @@ public class Joueur {
         argent=somme;
     }
 
+    public boolean paye(int somme){
+        if (somme < 0 || argent-somme < 0){
+            System.out.println("paiement impossible");
+            return false;
+        }else{
+            argent-=somme;
+            return true;
+        }
+    }
+
 }

@@ -15,7 +15,7 @@ public class TankLeger extends Unite {
         super(posX, posY, ami);
         loadImage("IDEA/Images/Tactical/Unite/TankL/TanklL.png");
         getImageDimensions();
-        force=(int)(150+random()*(150-125));
+        force=(int)(150+random()*(25));
         prix=4000;
         munition=8;
         deplacement=5;

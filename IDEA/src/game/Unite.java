@@ -13,10 +13,10 @@ public class Unite extends Sprite {
     protected int etat;//jauge d'énergie
     protected boolean isSelect;//savoir si il est selectionner avec le curseur
     final static int DEPLACEMENT_MAX=5;//nombre de case de deplacement
+    public static int prix;//ce que coute une unité
     protected boolean side;//ami= true ;enemie=false
     protected int deplacement;
     protected int force;//les degat que fait une unite
-    protected int prix;//ce que coute une unité
     protected int munition;//nul si munitions infinis
 
 
@@ -33,16 +33,6 @@ public class Unite extends Sprite {
         isSelect=false;
         etat=10;
     }
-
-    /*public void deplaceUnite(int depX, int depY){
-        if(isSelect){
-        if (depX + depY > deplacement){
-            System.out.println("deplacement trop grand : "+(depX+depY)+" max : "+deplacement);
-            return;
-        }
-        x+=depX;
-        y+=depY;}
-    }*/
 
     public int getDeplacementMax(){return DEPLACEMENT_MAX;}
 
