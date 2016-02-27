@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
+import static java.lang.Math.abs;
+
 /**
  * Created by Kiéran on 15/10/2015.
  */
@@ -64,15 +66,20 @@ public class Model {
 
     public void attaquer(Unite attaque,Unite defense){
         if (attaque.getSide() && !defense.getSide()){
-            defense.prendDegats(attaque.getForce());
-            if(defense.isDead()){
-                ennemis.remove(defense);
+            if((abs(attaque.getX()-defense.getX())==100)||(abs(attaque.getY()-defense.getY())==100)){
+                defense.prendDegats(attaque.getForce());
+                if(defense.isDead()){
+                    ennemis.remove(defense);
+                }
             }
 
+
         }else if(!attaque.getSide() && defense.getSide()){
-            defense.prendDegats(attaque.getForce());
-            if(defense.isDead()){
-                units.remove(defense);
+            if((abs(attaque.getX()-defense.getX())==100)||(abs(attaque.getY()-defense.getY())==100)){
+                defense.prendDegats(attaque.getForce());
+                if(defense.isDead()) {
+                    units.remove(defense);
+                }
             }
         }
     }
