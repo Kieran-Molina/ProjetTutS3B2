@@ -16,7 +16,7 @@ public class Model {
     public ArrayList<Unite> units;
     public ArrayList<Unite> ennemis;
     public ArrayList<Batiment> ville;
-    public boolean arbres [][];
+    //public boolean arbres [][];
 
 
     protected int DELAY = 4;
@@ -59,16 +59,12 @@ public class Model {
     public void setDELAYUp(){DELAY=DELAY-1;}//augmenter la vitesse
     public void setDELAYDown(){DELAY=DELAY+1;}//la baisse
 
-    public void creerUneUnite(Joueur joueur,Unite aCreer){
-        joueur.addUnite(aCreer);
-        movePanel.ajouterComposant(aCreer);
-    }
-
     public void attaquer(Unite attaque,Unite defense){
         if (attaque.getSide() && !defense.getSide()){
             if((abs(attaque.getX()-defense.getX())==100)||(abs(attaque.getY()-defense.getY())==100)){
                 defense.prendDegats(attaque.getForce());
                 if(defense.isDead()){
+                    movePanel.remove(defense);
                     ennemis.remove(defense);
                 }
             }
@@ -78,16 +74,16 @@ public class Model {
             if((abs(attaque.getX()-defense.getX())==100)||(abs(attaque.getY()-defense.getY())==100)){
                 defense.prendDegats(attaque.getForce());
                 if(defense.isDead()) {
+                    movePanel.remove(defense);
                     units.remove(defense);
                 }
             }
         }
     }
 
-    public int getListUnit(){ int i=(Integer)units.size();
-    return i;}
+    public int getNbUnit(){  return units.size(); }
 
-    public boolean isArbre(int x, int y) {
+    /*public boolean isArbre(int x, int y) {
         return arbres[x][y];
     }
 
@@ -395,5 +391,5 @@ public class Model {
         for (int i=8; i<=12; i++) {
             arbres[i][45]=true;
         }
-    }
+    }*/
 }

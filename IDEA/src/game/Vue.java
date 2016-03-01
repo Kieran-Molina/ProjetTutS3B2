@@ -4,8 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
-import java.io.File;
-import java.util.ArrayList;
 
 /**
  * Created by Kiéran on 15/10/2015.
@@ -42,8 +40,7 @@ public class Vue extends JFrame{
         for(Unite unit : model.units){model.movePanel.ajouterComposant(unit);}
         for(Unite unit : model.ennemis){model.movePanel.ajouterComposant(unit);}
 
-        //model.movePanel.repaint();
-        hub.add(new JLabel("Nombre unités"+ model.getListUnit()));
+        hub.add(new JLabel("Nombre unités"+ model.getNbUnit()));
         bar.setOpaque(true);
         bar.setBackground(new Color(0,0,0,0));
 

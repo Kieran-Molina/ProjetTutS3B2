@@ -76,10 +76,6 @@ public class Unite extends Sprite {
         g.drawImage(getImage(),x,y,null);
     }
 
-    public boolean getSelect(){return isSelect;}
-    public void trueSelect(){isSelect=true;}
-    public void falseSelect(){isSelect=false;}
-
     public int getForce(){return force;}
 
     public void setForce(int f){force=f;}
