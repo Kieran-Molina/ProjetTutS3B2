@@ -35,7 +35,7 @@ public class RenderPanel extends JPanel{
     }
 
     protected void paintComponent(Graphics g) {
-        Font font = new Font("Verdana", Font.BOLD, 30);//police pour l'affichage de l'état
+        Font font = new Font("Verdana", Font.BOLD, 15);//police pour l'affichage de l'état
         g.setFont(font);
         g.setColor(Color.white);
         super.paintComponent(g);
@@ -54,7 +54,8 @@ public class RenderPanel extends JPanel{
             g.drawImage(unit.getImage(), unit.getX() - getX(), unit.getY() - getY(), this);
             //test
             g.drawRect(unit.getX() - getX(), unit.getY() - getY(), 100, 100);
-            g.drawString("alli", unit.getX() - getX() + 10, unit.getY() - getY() + 40);
+            g.drawString("Joueur 1", unit.getX() - getX() + 10, unit.getY() - getY() + 40);
+            g.drawString(""+unit.getClass().getSimpleName(), unit.getX() - getX() + 10, unit.getY() - getY() + 70);
 
         }
 
@@ -62,7 +63,8 @@ public class RenderPanel extends JPanel{
             g.drawImage(ennemi.getImage(), ennemi.getX() - getX(), ennemi.getY() - getY(), this);
             //test
             g.drawRect(ennemi.getX() - getX(), ennemi.getY() - getY(), 100, 100);
-            g.drawString("enn", ennemi.getX() - getX() + 10, ennemi.getY() - getY() + 40);
+            g.drawString("Joueur 2", ennemi.getX() - getX() + 10, ennemi.getY() - getY() + 40);
+            g.drawString(""+ennemi.getClass().getSimpleName(), ennemi.getX() - getX() + 10, ennemi.getY() - getY() + 70);
         }
 
     }

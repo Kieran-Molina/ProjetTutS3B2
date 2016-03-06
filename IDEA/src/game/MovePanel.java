@@ -18,7 +18,7 @@ public class MovePanel extends JLayeredPane{
 
         setLayout(null); // on supprime le layout manager
 
-        ComponentMove listener = new ComponentMove(this);
+        ComponentMove listener = new ComponentMove(this,m);
         add(createRenderPan());
         addMouseListener(listener);
         addMouseMotionListener(listener);
@@ -44,20 +44,26 @@ public class MovePanel extends JLayeredPane{
     }
 
     private static class ComponentMove extends MouseAdapter {
-
+        private Model model;
         private int relx;
         private JComponent component;
         private int rely;
         private Container container;
         private int rpx = 0, rpy = -4000; // position de départ du renderPanel
 
-        public ComponentMove(Container container) {
+        public ComponentMove(Container container, Model model) {
             this.container = container;
+            this.model = model;
         }
 
         @Override
         public void mousePressed(MouseEvent e){
             component = getComponent(e.getX(), e.getY()); // on mémorise le composant en déplacement
+            if (model.tour == 1 && model.ennemis.contains(component))
+                component = null;
+            if (model.tour == 2 && model.units.contains(component))
+                component = null;
+
             if (component != null) {
                 relx = e.getX() - component.getX(); // on mémorise la position relative
                 rely = e.getY() - component.getY();

@@ -29,6 +29,10 @@ public class Sprite extends JPanel{
         setEnabled(false);
     }
 
+    public void resetInitPos(int mapX, int mapY){
+        initX = x-mapX; initY = y-mapY;
+    }
+
     protected void getImageDimensions() {
 
         width = image.getWidth(null);

@@ -52,7 +52,7 @@ public class Joueur {
 
     public boolean paye(int somme){
         if (somme < 0 || argent-somme < 0){
-            System.out.println("paiement impossible");
+            System.out.println("paiement impossible, reste : "+argent);
             return false;
         }else{
             argent-=somme;

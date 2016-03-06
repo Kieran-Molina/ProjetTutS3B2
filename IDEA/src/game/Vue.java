@@ -12,6 +12,9 @@ public class Vue extends JFrame{
     public Dimension dimension;
     protected Model model;
     protected JButton acheterTankLeger, acheterTankLourd, acheterChimique, acheterInfanterie, acheterGrenadier, acheterMoto;
+    protected JButton finTour;
+
+    protected JLabel lblTour, lblEffectif, lblArgent;
 
 
     public Vue(Model m){
@@ -36,13 +39,20 @@ public class Vue extends JFrame{
         JPanel tout = new JPanel(new BorderLayout());
         JPanel bar = new JPanel();
         JPanel hub = new JPanel();
+        JPanel bas = new JPanel();
 
         for(Unite unit : model.units){model.movePanel.ajouterComposant(unit);}
         for(Unite unit : model.ennemis){model.movePanel.ajouterComposant(unit);}
 
-        hub.add(new JLabel("Nombre unités"+ model.getNbUnit()));
-        bar.setOpaque(true);
-        bar.setBackground(new Color(0,0,0,0));
+        lblTour = new JLabel("Joueur "+model.tour);
+        lblEffectif = new JLabel("Effectif : "+ model.getNbUnit());
+        lblArgent = new JLabel("Argent : "+model.getArgent());
+        hub.add(lblTour);
+        hub.add(lblEffectif);
+        hub.add(lblArgent);
+        bas.setOpaque(true);
+        bas.setBackground(new Color(0,0,0,0));
+        bas.setLayout(new BoxLayout(bas,BoxLayout.Y_AXIS));
 
         // achats
         acheterTankLeger = new JButton("Tank Leger");
@@ -63,13 +73,17 @@ public class Vue extends JFrame{
         bar.add(acheterTankLourd);
         acheterChimique.setToolTipText("<HTML>Prix : 1500 <br>Deplacement : 2 <br>force : 70/100</HTML>");
         bar.add(acheterChimique);
-        acheterGrenadier.setToolTipText("<HTML>Prix : 300 <br>Deplacement : 2 <br>force : 50/80</HTML>");
+        acheterGrenadier.setToolTipText("<HTML>Prix : 3000 <br>Deplacement : 2 <br>force : 50/80</HTML>");
         bar.add(acheterGrenadier);
 
         bar.add(new JLabel("Actions : "));
-        bar.add(new JButton("Fin de tour"));
+        finTour = new JButton("Fin de tour");
+        bar.add(finTour);
+
+        bas.add(bar);
+        bas.add(hub);
         tout.add(model.movePanel, BorderLayout.CENTER);
-        tout.add(bar, BorderLayout.PAGE_END);
+        tout.add(bas, BorderLayout.PAGE_END);
         setContentPane(tout);
     }
 
@@ -78,6 +92,8 @@ public class Vue extends JFrame{
     }
 
     public void setControlButton(ActionListener listener) {
+        finTour.addActionListener(listener);
+
         acheterTankLeger.addActionListener(listener);
         acheterTankLourd.addActionListener(listener);
         acheterInfanterie.addActionListener(listener);

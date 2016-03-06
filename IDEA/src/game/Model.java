@@ -17,6 +17,7 @@ public class Model {
     public ArrayList<Unite> ennemis;
     public ArrayList<Batiment> ville;
     //public boolean arbres [][];
+    public int tour;
 
 
     protected int DELAY = 4;
@@ -29,6 +30,8 @@ public class Model {
 
         units.add(new TankLeger(1400,4700,true));
         units.add(new Infanterie(1300,4700,true));
+
+        tour = 1;
 
 
         ennemis = new ArrayList<Unite>();
@@ -81,7 +84,25 @@ public class Model {
         }
     }
 
-    public int getNbUnit(){  return units.size(); }
+    public int getNbUnit(){
+        return tour==1 ? units.size() : ennemis.size();
+    }
+
+    public void finTour(){
+        if (tour == 1) tour = 2;
+        else tour = 1;
+
+        for (Unite unit : units){
+            unit.resetInitPos(movePanel.renderPanel.getX(),movePanel.renderPanel.getY());
+        }
+        for (Unite enn : ennemis){
+            enn.resetInitPos(movePanel.renderPanel.getX(),movePanel.renderPanel.getY());
+        }
+    }
+
+    public int getArgent() {
+        return tour==1 ? allie.getArgent() : ennemi.getArgent();
+    }
 
     /*public boolean isArbre(int x, int y) {
         return arbres[x][y];
