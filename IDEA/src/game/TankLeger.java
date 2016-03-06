@@ -13,7 +13,8 @@ public class TankLeger extends Unite {
     public TankLeger(int posX, int posY, boolean ami) {
 
         super(posX, posY, ami);
-        loadImage("IDEA/Images/Tactical/Unite/TankL/TanklL.png");
+        if (ami) loadImage("IDEA/Images/Tactical/Unite/TankL/TanklL.png");
+        else loadImage("IDEA/Images/Tactical/Unite/TankL/E-TanklL.png");
         getImageDimensions();
         force=(int)(150+random()*(25));
         prix=4000;
