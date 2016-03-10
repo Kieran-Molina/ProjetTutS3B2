@@ -7,6 +7,7 @@ import static java.lang.Math.random;
 
 
 public class Grenadier extends Unite {
+    public static final int prix = 300;
 
     public Grenadier(int posX, int posY, boolean ami) {
 
@@ -16,14 +17,11 @@ public class Grenadier extends Unite {
         else{loadImage("IDEA/Images/Tactical/Unite/GrenadierEnnemi/Normal/Déplacement_LEFT/GrenadierEnnemi_Deplacement_1.png");}
         getImageDimensions();
         force=(int)(50+random()*(30));
-        prix=300;
         munition=3;
         deplacement=2;
 
     }
 
-
-
-
+    public int getEtatMax(){return ETAT_MAX;}
 
 }

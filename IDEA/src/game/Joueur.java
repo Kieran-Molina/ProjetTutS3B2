@@ -1,5 +1,6 @@
 package game;
 
+import javax.swing.*;
 import java.util.ArrayList;
 
 /**
@@ -53,6 +54,9 @@ public class Joueur {
     public boolean paye(int somme){
         if (somme < 0 || argent-somme < 0){
             System.out.println("paiement impossible, reste : "+argent);
+            JOptionPane.showMessageDialog(null, "Paiement impossible : \nreste : "+argent+"\nprix : "+somme,
+                    "avertissement",
+                    JOptionPane.WARNING_MESSAGE);
             return false;
         }else{
             argent-=somme;

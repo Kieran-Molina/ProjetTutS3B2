@@ -63,17 +63,23 @@ public class Vue extends JFrame{
         acheterMoto = new JButton("Moto");
 
         bar.add(new JLabel("Achat : "));
-        acheterInfanterie.setToolTipText("<HTML>Prix : 100 <br>Deplacement : 3 <br>force : 35/50</HTML>");
+        acheterInfanterie.setToolTipText("<HTML>Prix : "+Infanterie.prix+" <br>Deplacement : "+Infanterie.DEPLACEMENT_MAX
+                +" <br>force : 35/50 <br>resistance : "+Infanterie.ETAT_MAX+"</HTML>");
         bar.add(acheterInfanterie);
-        acheterMoto.setToolTipText("<HTML>Prix : 1000 <br>Deplacement : 8 <br>force : 35/50</HTML>");
+        acheterMoto.setToolTipText("<HTML>Prix : "+Moto.prix+" <br>Deplacement : "+Moto.DEPLACEMENT_MAX
+                +" <br>force : 35/50 <br>resistance : "+Moto.ETAT_MAX+"</HTML>");
         bar.add(acheterMoto);
-        acheterTankLeger.setToolTipText("<HTML>Prix : 4000 <br>Deplacement : 5 <br>force : 150/175</HTML>");
+        acheterTankLeger.setToolTipText("<HTML>Prix : "+TankLeger.prix+" <br>Deplacement : "+TankLeger.DEPLACEMENT_MAX
+                +" <br>force : 150/175 <br>resistance : "+TankLeger.ETAT_MAX+"</HTML>");
         bar.add(acheterTankLeger);
-        acheterTankLourd.setToolTipText("<HTML>Prix : 6000 <br>Deplacement : 6 <br>force : 180/230</HTML>");
+        acheterTankLourd.setToolTipText("<HTML>Prix : "+TankLourd.prix+" <br>Deplacement : "+TankLourd.DEPLACEMENT_MAX
+                +" <br>force : 180/230 <br>resistance : "+TankLourd.ETAT_MAX+"</HTML>");
         bar.add(acheterTankLourd);
-        acheterChimique.setToolTipText("<HTML>Prix : 1500 <br>Deplacement : 2 <br>force : 70/100</HTML>");
+        acheterChimique.setToolTipText("<HTML>Prix : "+Chimique.prix+" <br>Deplacement : "+Chimique.DEPLACEMENT_MAX
+                +" <br>force : 70/100 <br>resistance : "+Chimique.ETAT_MAX+"</HTML>");
         bar.add(acheterChimique);
-        acheterGrenadier.setToolTipText("<HTML>Prix : 3000 <br>Deplacement : 2 <br>force : 50/80</HTML>");
+        acheterGrenadier.setToolTipText("<HTML>Prix : "+Grenadier.prix+" <br>Deplacement : "+Grenadier.DEPLACEMENT_MAX
+                +" <br>force : 50/80 <br>resistance : "+Grenadier.ETAT_MAX+"</HTML>");
         bar.add(acheterGrenadier);
 
         bar.add(new JLabel("Actions : "));

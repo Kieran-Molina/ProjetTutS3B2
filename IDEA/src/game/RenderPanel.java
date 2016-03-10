@@ -2,6 +2,7 @@ package game;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.geom.Arc2D;
 
 /**
  * Created by Kiéran on 15/10/2015.
@@ -56,7 +57,13 @@ public class RenderPanel extends JPanel{
             g.drawRect(unit.getX() - getX(), unit.getY() - getY(), 100, 100);
             g.drawString("Joueur 1", unit.getX() - getX() + 10, unit.getY() - getY() + 40);
             g.drawString(""+unit.getClass().getSimpleName(), unit.getX() - getX() + 10, unit.getY() - getY() + 70);
-
+            int etat = Math.floorDiv(unit.getEtat() * 100, unit.getEtatMax());
+            if (etat >=70) g.setColor(Color.green);
+            else if (etat >= 40) g.setColor(Color.yellow);
+            else if (etat >= 20) g.setColor(Color.orange);
+            else g.setColor(Color.red);
+            g.fillRect(unit.getX() - getX(), unit.getY() - getY(), etat, 10);
+            g.setColor(Color.white);
         }
 
         for (Unite ennemi : model.ennemis) {//ennemi
@@ -65,6 +72,13 @@ public class RenderPanel extends JPanel{
             g.drawRect(ennemi.getX() - getX(), ennemi.getY() - getY(), 100, 100);
             g.drawString("Joueur 2", ennemi.getX() - getX() + 10, ennemi.getY() - getY() + 40);
             g.drawString(""+ennemi.getClass().getSimpleName(), ennemi.getX() - getX() + 10, ennemi.getY() - getY() + 70);
+            int etat = Math.floorDiv(ennemi.getEtat() * 100, ennemi.getEtatMax());
+            if (etat >=70) g.setColor(Color.green);
+            else if (etat >= 40) g.setColor(Color.yellow);
+            else if (etat >= 20) g.setColor(Color.orange);
+            else g.setColor(Color.red);
+            g.fillRect(ennemi.getX() - getX(), ennemi.getY() - getY(), etat, 10);
+            g.setColor(Color.white);
         }
 
     }
