@@ -12,9 +12,9 @@ public class Grenadier extends Unite {
     public Grenadier(int posX, int posY, boolean ami) {
 
         super(posX, posY, ami);
-        if(ami==true){
-        loadImage("IDEA/Images/Tactical/Unite/Grenadier/Normal/Déplacement_LEFT/Grenadier_Deplacement_11.png");}
-        else{loadImage("IDEA/Images/Tactical/Unite/GrenadierEnnemi/Normal/Déplacement_LEFT/GrenadierEnnemi_Deplacement_1.png");}
+        if(ami){
+        loadImage("IDEA/Images/Tactical/Unite/Grenadier/Grenadier.png");}
+        else{loadImage("IDEA/Images/Tactical/Unite/Grenadier/GrenadierB.png");}
         getImageDimensions();
         force=(int)(50+random()*(30));
         munition=3;

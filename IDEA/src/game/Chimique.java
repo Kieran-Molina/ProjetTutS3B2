@@ -12,7 +12,8 @@ public class Chimique extends Unite {
     public Chimique(int posX, int posY, boolean ami) {
 
         super(posX, posY, ami);
-        loadImage("IDEA/Images/Tactical/Unite/Chimique/Normal/Déplacement_LEFT/Chimique_Deplacement_11.png");
+        if(ami) loadImage("IDEA/Images/Tactical/Unite/Chimique/Chimique.png");
+        else loadImage("IDEA/Images/Tactical/Unite/Chimique/ChimiqueB.png");
         getImageDimensions();
         force = (int) (70 + random() * (30));
         munition=3;

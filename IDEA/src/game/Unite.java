@@ -8,8 +8,7 @@ import java.awt.event.KeyEvent;
  * Created by Kiéran on 23/10/2015.
  */
 public class Unite extends Sprite {
-    private static int direction; // sera en abstract
-    //public int x, y;
+    //private static int direction;
     protected int etat;//jauge d'énergie
     protected boolean isSelect;//savoir si il est selectionner avec le curseur
     final static int DEPLACEMENT_MAX=5;//nombre de case de deplacement
@@ -22,15 +21,14 @@ public class Unite extends Sprite {
 
 
     //--- CONSTANTES ---//
-    private static final ImageIcon img_UP = new ImageIcon("IDEA/Images/Tactical/Unite/Default/up.png");
-    private static final ImageIcon img_RIGHT = new ImageIcon("IDEA/Images/Tactical/Unite/Default/right.png");
-    private static final ImageIcon img_DOWN = new ImageIcon("IDEA/Images/Tactical/Unite/Default/down.png");
-    private static final ImageIcon img_LEFT = new ImageIcon("IDEA/Images/Tactical/Unite/Default/left.png");
-    public static final int UP = 1, RIGHT = 2, DOWN = 3, LEFT = 4;
+    //private static final ImageIcon img_UP = new ImageIcon("IDEA/Images/Tactical/Unite/Default/up.png");
+    //private static final ImageIcon img_RIGHT = new ImageIcon("IDEA/Images/Tactical/Unite/Default/right.png");
+    //private static final ImageIcon img_DOWN = new ImageIcon("IDEA/Images/Tactical/Unite/Default/down.png");
+    //private static final ImageIcon img_LEFT = new ImageIcon("IDEA/Images/Tactical/Unite/Default/left.png");
+    //public static final int UP = 1, RIGHT = 2, DOWN = 3, LEFT = 4;
 
     public Unite(int posX, int posY,boolean ami){
         super(posX,posY);
-        direction = RIGHT;
         isSelect=false;
         etat=ETAT_MAX;
         deplacement = DEPLACEMENT_MAX;
@@ -39,25 +37,6 @@ public class Unite extends Sprite {
     public int getDeplacementMax(){return deplacement;}
 
     public int getEtatMax(){return ETAT_MAX;}
-
-    public boolean isDead(){
-        if(etat<=0){
-            return true;
-        }
-        return false;
-    }
-
-    public void attackUnit(Unite u){
-        if(this.side!=u.side){
-            if(this.getX()+100==u.getX()
-                &&this.getX()-100==u.getX()
-                &&this.getY()+100==u.getY()
-                &&this.getY()-100==u.getY()){
-                    u.prendDegats(this.getForce());
-
-            }
-        }
-    }
 
     public int getEtat(){return etat;}
 
@@ -82,17 +61,8 @@ public class Unite extends Sprite {
 
     public int getForce(){return force;}
 
-    public void setForce(int f){force=f;}
-
     public boolean getSide(){return side;}
 
-
     public int getPrix(){return prix;}
-
-    public String getTextEtat(int etat){
-        String text = Integer.toString(etat);
-        return text;
-    }
-
 
 }

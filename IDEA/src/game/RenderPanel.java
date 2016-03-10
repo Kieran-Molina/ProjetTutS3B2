@@ -20,21 +20,6 @@ public class RenderPanel extends JPanel{
         setFocusable(true);
     }
 
-    public void deplacer(int x, int y) {
-        setLocation(getX() + x, getY() + y);
-        if (getX() > 0) setLocation(0, getY());
-        if (getY() > 0) setLocation(getX(), 0);
-
-        int hmax = getParent().getWidth() - model.getMap().getWidth(null);
-        int lmax = getParent().getHeight() - model.getMap().getHeight(null);
-
-        if (getX() < hmax) setLocation(hmax, getY());
-        if (getY() < lmax) setLocation(getX(), lmax);
-
-
-        revalidate();
-    }
-
     protected void paintComponent(Graphics g) {
         Font font = new Font("Verdana", Font.BOLD, 15);//police pour l'affichage de l'état
         g.setFont(font);

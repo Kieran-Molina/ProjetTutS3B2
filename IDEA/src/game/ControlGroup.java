@@ -9,7 +9,6 @@ public class ControlGroup {
 
     protected ControlMenu cm;
     protected ControlButton cb;
-    protected ControlKey ck;
 
     public ControlGroup(Model m) {
         model = m;
@@ -17,7 +16,5 @@ public class ControlGroup {
 
         cb = new ControlButton(model, vue);
         cm = new ControlMenu(model, vue);
-        ck = new ControlKey(model, vue);
-        vue.setControlKey(ck);
     }
 }

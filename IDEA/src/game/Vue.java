@@ -107,15 +107,4 @@ public class Vue extends JFrame{
         acheterGrenadier.addActionListener(listener);
         acheterChimique.addActionListener(listener);
     }
-
-    public void setControlMenu(ActionListener listener) {
-        // xxx.addActionListener(listener);
-    }
-
-    public void setControlKey(KeyAdapter listener) {
-        addKeyListener(listener);
-        model.movePanel.addKeyListener(listener);
-        model.movePanel.renderPanel.addKeyListener(listener);
-
-    }
 }

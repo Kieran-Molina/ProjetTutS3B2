@@ -15,9 +15,9 @@ public class TankLourd extends Unite {
     public TankLourd(int posX, int posY, boolean ami) {
 
         super(posX, posY, ami);
-        if(ami==true){
-            loadImage("IDEA/Images/Tactical/Unite/Renault_FT17/Normal/Déplacement_LEFT/Renault_FT_17_Deplacement_11.png");}//if pour savoir que sprite selon l'armée
-        else{loadImage("IDEA/Images/Tactical/Unite/Renault_FT17/Normal/Déplacement_RIGHT/Renault_FT_17_Deplacement_11.png");}
+        if(ami){
+            loadImage("IDEA/Images/Tactical/Unite/TankLourd/TankLourd.png");}//if pour savoir que sprite selon l'armée
+        else{loadImage("IDEA/Images/Tactical/Unite/TankLourd/TankLourdB.png");}
         getImageDimensions();
         force=(int)(180+random()*(50));
         munition=9;

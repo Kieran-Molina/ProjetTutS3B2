@@ -62,10 +62,6 @@ public class Sprite extends JPanel{
         return vis;
     }
 
-    public void setVisible(Boolean visible) {
-        vis = visible;
-    }
-
     public Rectangle getBounds() {//sert a la detection des sprites
         return new Rectangle(x, y, 100, 100);
     }
