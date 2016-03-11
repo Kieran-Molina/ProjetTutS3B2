@@ -14,8 +14,8 @@ public class Infanterie extends Unite {
     public Infanterie(int posX, int posY, boolean ami) {
 
         super(posX, posY,ami);
-        if(ami) loadImage("IDEA/Images/Tactical/Unite/Infanterie/soldier_face.png");
-        else loadImage("IDEA/Images/Tactical/Unite/Infanterie/soldier_faceB.png");
+        if(ami) loadImage("IDEA/Images/Tactical/Unite/Infanterie/SoldatRDroit.png");
+        else loadImage("IDEA/Images/Tactical/Unite/Infanterie/SoldatBGauche.png");
 
         getImageDimensions();
         force=(int)(35+random()*(15));
