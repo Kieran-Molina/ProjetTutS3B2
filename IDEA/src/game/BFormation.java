@@ -9,8 +9,8 @@ public class BFormation extends Batiment {
     protected boolean isSelect;
 
 
-    public BFormation(int lx,int ly) {
-        super(lx,ly);
+    public BFormation(int lx,int ly,boolean s) {
+        super(lx,ly,s);
         isSelect=false;
         loadImage("IDEA/Images/Tactical/Batiment/BatimentFormation.png");
         getImageDimensions();

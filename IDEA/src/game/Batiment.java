@@ -11,11 +11,11 @@ public class Batiment extends Sprite {
     protected boolean capture;//si false, le batiment est neutre
     protected boolean batSide;//true batment ami rapport une somme au camp a lequel elle appartient
 
-    public Batiment (int xb,int yb){
+    public Batiment (int xb,int yb,boolean s){
         super(xb,yb);
         impot=100;
         capture=false;
-        batSide=true;
+        this.batSide=s;
 
     }
 
@@ -28,6 +28,7 @@ public class Batiment extends Sprite {
     }
 
     public boolean getSide(){return batSide;}
+
     public void setside(Unite uni){
         if(uni.getSide()==true){batSide=true;}
         else{batSide=false;}

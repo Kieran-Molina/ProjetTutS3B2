@@ -7,11 +7,17 @@ import javax.swing.*;
  */
 public class QG extends Batiment {
 
-    public QG (int lx,int ly){
-        super(lx,ly);
 
-        loadImage("IDEA/Images/Tactical/Batiment/QG.png");
-        getImageDimensions();
+
+    public QG (int lx,int ly,boolean s){
+        super(lx,ly,s);
+        if(s==true){
+        loadImage("IDEA/Images/Tactical/Batiment/QGRouge.png");
+        getImageDimensions();}
+        else{
+            loadImage("IDEA/Images/Tactical/Batiment/QGBleu.png");
+            getImageDimensions();
+        }
 
     }
 }

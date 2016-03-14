@@ -7,8 +7,8 @@ public class BNeutre extends Batiment {
 
     protected boolean isSelect;
 
-    public BNeutre(int xb, int yb) {
-        super(xb, yb);
+    public BNeutre(int xb, int yb,boolean s) {
+        super(xb, yb,s);
         loadImage("IDEA/Images/Tactical/Batiment/BatimentCapture.png");
         getImageDimensions();
         isSelect=false;

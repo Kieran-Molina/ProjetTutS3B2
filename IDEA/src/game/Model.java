@@ -37,8 +37,8 @@ public class Model {
 
         ville = new ArrayList<Batiment>();
 
-        ville.add(new QG(300,4400));
-        ville.add(new QG(4100,100));
+        ville.add(new QG(300,4400,true));
+        ville.add(new QG(4100,100,false));
         ville.add(new BFormation(900,4100));
         ville.add(new BFormation(3200,100));
 
