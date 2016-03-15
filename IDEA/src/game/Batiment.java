@@ -34,4 +34,5 @@ public class Batiment extends Sprite {
         else{batSide=false;}
     }
 
+
 }

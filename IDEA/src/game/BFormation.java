@@ -12,8 +12,14 @@ public class BFormation extends Batiment {
     public BFormation(int lx,int ly,boolean s) {
         super(lx,ly,s);
         isSelect=false;
-        loadImage("IDEA/Images/Tactical/Batiment/BatimentFormation.png");
-        getImageDimensions();
+        if(s==true){
+            loadImage("IDEA/Images/Tactical/Batiment/UsineNeutre.png");
+            getImageDimensions();
+        }else{
+            loadImage("IDEA/Images/Tactical/Batiment/UsineNeutre.png");
+            getImageDimensions();
+        }
+
 
     }
 

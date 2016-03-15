@@ -15,6 +15,9 @@ public class Vue extends JFrame{
     protected JButton finTour;
 
     protected JLabel lblTour, lblEffectif, lblArgent;
+    JPopupMenu popup_desktop = new JPopupMenu("Desktop Menu : ");
+    PopupListener popupListener = new PopupListener(popup_desktop);
+
 
 
     public Vue(Model m){
@@ -36,6 +39,7 @@ public class Vue extends JFrame{
     }
 
     private void creerVueJeu() {
+
         JPanel tout = new JPanel(new BorderLayout());
         JPanel bar = new JPanel();
         JPanel hub = new JPanel();
@@ -92,12 +96,12 @@ public class Vue extends JFrame{
         tout.add(bas, BorderLayout.PAGE_END);
         setContentPane(tout);
     }
-
     private void initAttribut() {
         model.movePanel = new MovePanel(model,this);
     }
 
     public void setControlButton(ActionListener listener) {
+        this.addMouseListener(popupListener);
         finTour.addActionListener(listener);
 
         acheterTankLeger.addActionListener(listener);

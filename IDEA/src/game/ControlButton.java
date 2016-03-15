@@ -27,7 +27,7 @@ public class ControlButton implements ActionListener{
         if (e.getSource()==vue.acheterTankLeger){
             if (model.tour == 1) {
                 if (model.allie.paye(TankLeger.prix)) {
-                    Unite newTank = new TankLeger(1300, 4600, true);
+                    Unite newTank = new TankLeger(900,4100,true);
                     model.units.add(newTank);
                     model.movePanel.ajouterComposant(newTank);
                 }
@@ -43,13 +43,13 @@ public class ControlButton implements ActionListener{
         if (e.getSource()==vue.acheterTankLourd){
             if (model.tour == 1){
                 if (model.allie.paye(TankLourd.prix)) {
-                    Unite newTank = new TankLourd(1300, 4600, true);
+                    Unite newTank = new TankLourd(900,4100,true);
                     model.units.add(newTank);
                     model.movePanel.ajouterComposant(newTank);
                 }
             }else{
                 if (model.ennemi.paye(TankLourd.prix)) {
-                    Unite newTank = new TankLourd(3500, 600, false);
+                    Unite newTank = new TankLourd(300,4400,true);
                     model.ennemis.add(newTank);
                     model.movePanel.ajouterComposant(newTank);
                 }
@@ -59,7 +59,7 @@ public class ControlButton implements ActionListener{
         if (e.getSource()==vue.acheterInfanterie){
             if (model.tour == 1){
                 if (model.allie.paye(Infanterie.prix)) {
-                    Unite newUnit = new Infanterie(1300,4600, true);
+                    Unite newUnit = new Infanterie(900,4100,true);
                     model.units.add(newUnit);
                     model.movePanel.ajouterComposant(newUnit);
                 }
@@ -75,7 +75,7 @@ public class ControlButton implements ActionListener{
         if (e.getSource()==vue.acheterChimique){
             if (model.tour == 1) {
                 if (model.allie.paye(Chimique.prix)) {
-                    Unite newUnit = new Chimique(1300, 4600, true);
+                    Unite newUnit = new Chimique(900,4100,true);
                     model.units.add(newUnit);
                     model.movePanel.ajouterComposant(newUnit);
                 }
@@ -91,7 +91,7 @@ public class ControlButton implements ActionListener{
         if (e.getSource()==vue.acheterMoto){
             if (model.tour == 1) {
                 if (model.allie.paye(Moto.prix)) {
-                    Unite newUnit = new Moto(1300, 4600, true);
+                    Unite newUnit = new Moto(900,4100,true);
                     model.units.add(newUnit);
                     model.movePanel.ajouterComposant(newUnit);
                 }
@@ -107,7 +107,7 @@ public class ControlButton implements ActionListener{
         if (e.getSource()==vue.acheterGrenadier){
             if (model.tour == 1) {
                 if (model.allie.paye(Grenadier.prix)) {
-                    Unite newUnit = new Grenadier(1300, 4600, true);
+                    Unite newUnit = new Grenadier(900,4100,true);
                     model.units.add(newUnit);
                     model.movePanel.ajouterComposant(newUnit);
                 }

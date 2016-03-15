@@ -39,8 +39,8 @@ public class Model {
 
         ville.add(new QG(300,4400,true));
         ville.add(new QG(4100,100,false));
-        ville.add(new BFormation(900,4100));
-        ville.add(new BFormation(3200,100));
+        ville.add(new BFormation(900,4100,true));
+        ville.add(new BFormation(3200,100,false));
 
         allie=new Joueur(15000);
         ennemi=new Joueur(15000);
@@ -115,6 +115,8 @@ public class Model {
             System.exit(0);
         }
     }
+
+
 
 
 }

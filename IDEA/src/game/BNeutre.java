@@ -9,8 +9,13 @@ public class BNeutre extends Batiment {
 
     public BNeutre(int xb, int yb,boolean s) {
         super(xb, yb,s);
-        loadImage("IDEA/Images/Tactical/Batiment/BatimentCapture.png");
-        getImageDimensions();
+        if(s==true){
+            loadImage("IDEA/Images/Tactical/Batiment/BatimentRouge.png");
+            getImageDimensions();
+        }else{
+            loadImage("IDEA/Images/Tactical/Batiment/BatimentBleu.png");
+            getImageDimensions();
+        }
         isSelect=false;
 
     }
