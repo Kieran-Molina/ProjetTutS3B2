@@ -15,9 +15,6 @@ public class Vue extends JFrame{
     protected JButton finTour;
 
     protected JLabel lblTour, lblEffectif, lblArgent;
-    JPopupMenu popup_desktop = new JPopupMenu("Desktop Menu : ");
-    PopupListener popupListener = new PopupListener(popup_desktop);
-
 
 
     public Vue(Model m){
@@ -101,7 +98,6 @@ public class Vue extends JFrame{
     }
 
     public void setControlButton(ActionListener listener) {
-        this.addMouseListener(popupListener);
         finTour.addActionListener(listener);
 
         acheterTankLeger.addActionListener(listener);
