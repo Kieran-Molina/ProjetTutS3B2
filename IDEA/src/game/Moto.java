@@ -12,7 +12,7 @@ public class Moto extends Unite {
     public Moto(int posX, int posY, boolean ami) {
 
         super(posX, posY, ami);
-        if (ami) loadImage("IDEA/Images/Tactical/Unite/Moto/Moto.png");
+        if (ami) loadImage("IDEA/Images/Tactical/Unite/Moto/MotoA.png");
         else loadImage("IDEA/Images/Tactical/Unite/Moto/MotoB.png");
         getImageDimensions();
         force = (int) (35 + random() * (15));

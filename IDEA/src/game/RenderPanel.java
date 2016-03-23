@@ -39,9 +39,9 @@ public class RenderPanel extends JPanel{
         for (Unite unit : model.units) {//ami
             g.drawImage(unit.getImage(), unit.getX() - getX(), unit.getY() - getY(), this);
             //test
-            g.drawRect(unit.getX() - getX(), unit.getY() - getY(), 100, 100);
-            g.drawString("Joueur 1", unit.getX() - getX() + 10, unit.getY() - getY() + 40);
-            g.drawString(""+unit.getClass().getSimpleName(), unit.getX() - getX() + 10, unit.getY() - getY() + 70);
+            //g.drawRect(unit.getX() - getX(), unit.getY() - getY(), 100, 100);
+            //g.drawString("Joueur 1", unit.getX() - getX() + 10, unit.getY() - getY() + 40);
+            //g.drawString(""+unit.getClass().getSimpleName(), unit.getX() - getX() + 10, unit.getY() - getY() + 70);
             int etat = Math.floorDiv(unit.getEtat() * 100, unit.getEtatMax());
             if (etat >=70) g.setColor(Color.green);
             else if (etat >= 40) g.setColor(Color.yellow);
@@ -54,9 +54,9 @@ public class RenderPanel extends JPanel{
         for (Unite ennemi : model.ennemis) {//ennemi
             g.drawImage(ennemi.getImage(), ennemi.getX() - getX(), ennemi.getY() - getY(), this);
             //test
-            g.drawRect(ennemi.getX() - getX(), ennemi.getY() - getY(), 100, 100);
-            g.drawString("Joueur 2", ennemi.getX() - getX() + 10, ennemi.getY() - getY() + 40);
-            g.drawString(""+ennemi.getClass().getSimpleName(), ennemi.getX() - getX() + 10, ennemi.getY() - getY() + 70);
+            //g.drawRect(ennemi.getX() - getX(), ennemi.getY() - getY(), 100, 100);
+            //g.drawString("Joueur 2", ennemi.getX() - getX() + 10, ennemi.getY() - getY() + 40);
+            //g.drawString(""+ennemi.getClass().getSimpleName(), ennemi.getX() - getX() + 10, ennemi.getY() - getY() + 70);
             int etat = Math.floorDiv(ennemi.getEtat() * 100, ennemi.getEtatMax());
             if (etat >=70) g.setColor(Color.green);
             else if (etat >= 40) g.setColor(Color.yellow);
